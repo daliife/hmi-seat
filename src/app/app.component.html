@@ -1,3 +1,3 @@
 <app-navbar-logo></app-navbar-logo>
-
-<app-welcome></app-welcome>
+<app-welcome (clickStart)="toggleVideo($event)"></app-welcome>
+<app-welcome-video [showVideo]="showVideo" (clickSkip)="toggleVideo($event)"></app-welcome-video>

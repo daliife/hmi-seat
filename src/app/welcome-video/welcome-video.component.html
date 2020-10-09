@@ -1,0 +1,10 @@
+<div *ngIf="showVideo" class="welcome-video-container animate__animated" [ngClass]="{animate__fadeIn: showVideo,
+animate__fadeOut: skip}">
+  <video class="welcome-video" #videoPlayer (ended)="onClickSkip()" preload="auto" autoplay>
+    <!-- <source src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4" type="video/mp4">
+    <source src="https://file-examples-com.github.io/uploads/2018/04/file_example_OGG_1920_13_3mg.ogg" type="video/ogg"> -->
+    <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button class="skip-button" (click)="onClickSkip()">Skip Intro</button>
+</div>

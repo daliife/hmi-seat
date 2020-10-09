@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hmi-seat';
+
+  showVideo = false;
+
+  toggleVideo(newValue: boolean): void{
+    this.showVideo = newValue;
+  }
 }
