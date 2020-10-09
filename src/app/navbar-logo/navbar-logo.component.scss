@@ -1,0 +1,21 @@
+.logo-container{
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  #logo-seat, #logo-everis{
+    height: 100%;
+    width: auto;
+    padding: .5rem;
+  }
+  z-index: 1;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -ms-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.hide-logo{
+  opacity: 0;
+}
