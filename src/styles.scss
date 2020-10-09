@@ -1,5 +1,36 @@
-*{
+// Initial styles clear
+
+* {
   margin: 0px;
   padding: 0px;
   background-color: black;
+  font-size: 16px;
+  font-family: "SeatBcn-Regular", Helvetica, Arial, sans-serif;
+}
+
+// Font imports
+
+@font-face {
+  font-family: SeatBcn-Black;
+  src: url("./assets/fonts/SeatBcn-Black.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Bold;
+  src: url("./assets/fonts/SeatBcn-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Book;
+  src: url("./assets/fonts/SeatBcn-Book.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Italic;
+  src: url("./assets/fonts/SeatBcn-Italic.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Light;
+  src: url("./assets/fonts/SeatBcn-Light.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Regular;
+  src: url("./assets/fonts/SeatBcn-Regular.woff") format("woff");
 }
