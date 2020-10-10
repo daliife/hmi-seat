@@ -8,6 +8,7 @@ import { EventEmitter, Output, Component, OnInit } from '@angular/core';
 export class WelcomeComponent implements OnInit {
 
   @Output() clickStart = new EventEmitter<boolean>();
+  @Output() clickKombi = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -15,6 +16,9 @@ export class WelcomeComponent implements OnInit {
 
   onClickStart(): void {
     this.clickStart.emit(true);
+  }
+  onClickKombi(): void {
+    this.clickKombi.emit(true);
   }
 
 }

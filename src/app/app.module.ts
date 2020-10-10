@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { NavbarLogoComponent } from './navbar-logo/navbar-logo.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { WelcomeVideoComponent } from './welcome-video/welcome-video.component';
+import { KombiComponent } from './kombi/kombi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarLogoComponent,
     WelcomeComponent,
-    WelcomeVideoComponent
+    WelcomeVideoComponent,
+    KombiComponent
   ],
   imports: [
     BrowserModule

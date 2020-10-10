@@ -1,0 +1,17 @@
+<div *ngIf="showKombi" class="kombi-container animate__animated animate__fadeIn">
+  <div class="kombi-background">
+    <img (load)="fadeIn();" class="floating-img animate__animated"
+      src="https://via.placeholder.com/1920x1080/00FFFF">
+  </div>
+  <div class="kombi-section">
+    <img src="https://via.placeholder.com/1920x540/000000">
+  </div>
+  <div class="kombi-interactives">
+    <a href="https://google.es" target="_blank" class="kombi-link">Download</a>
+    <div>
+      <button *ngFor="let step of steps;let i = index;" [disabled]="!step" (click)="nextStep(i+1)"
+        class="button-test">{{(i+1) * 10}}km</button>
+    </div>
+    <a href="https://google.es" target="_blank" class="kombi-link">Play</a>
+  </div>
+</div>
