@@ -1,7 +1,21 @@
 <app-navbar-logo></app-navbar-logo>
 
-<app-welcome (clickStart)="toggleVideo($event)" (clickKombi)="toggleKombi($event)"></app-welcome>
+<app-welcome *ngIf="steps[0]" 
+  [initialAnimation]="!initialised"
+  (clickStart)="toggleVideo($event)" 
+  (clickNext)="nextStep()"
+></app-welcome>
 
-<app-welcome-video [showVideo]="showVideo" (clickSkip)="toggleVideo($event)"></app-welcome-video>
+<app-welcome-video [showVideo]="showVideo" 
+  (clickSkip)="toggleVideo($event)"
+></app-welcome-video>
 
-<app-kombi [showKombi]="showKombi"></app-kombi>
+<app-chronology *ngIf="steps[1]" 
+  [initialAnimation]="!initialised2"
+  (clickPrevious)="previousStep()" 
+  (clickNext)="nextStep()"
+></app-chronology>
+
+<app-kombi *ngIf="steps[2]" 
+  (clickPrevious)="previousStep()" 
+></app-kombi>

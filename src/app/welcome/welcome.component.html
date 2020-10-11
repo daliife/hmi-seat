@@ -1,8 +1,10 @@
-<div class="welcome-container animate__animated animate__zoomIn">
+<div class="welcome-container ">
   <div class="center">
-    <h1 class="welcome-title">Welcome to SEAT's history</h1>
-    <h2 class="welcome-subtitle">Do you remember SEAT's past?<br>Discover how it has evolved throughout history.</h2>
-    <button (click)="onClickStart()" class="welcome-button animate__animated animate__headShake animate__delay-2s">Start</button>
-    <button style="margin-left: 2rem;" (click)="onClickKombi()" class="welcome-button animate__animated animate__headShake animate__delay-3s">Go Kombi</button>
+    <div id="welcome-animation" class="animate__animated animate__fast">      
+      <h1 class="welcome-title">Welcome to SEAT's history</h1>
+      <h2 class="welcome-subtitle">Do you remember SEAT's past?<br>Discover how it has evolved throughout history.</h2>
+      <button (click)="onClickStart()" class="welcome-button welcome-hover animate__animated animate__fast animate__flipInX animate__delay-1s">Play video</button>
+      <button style="margin-left: 2rem;" (click)="onClickNext()" class="welcome-button welcome-hover animate__animated animate__fast animate__flipInX animate__delay-1s">Next</button>
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 })
 export class KombiComponent implements OnInit {
 
-  @Input() showKombi = false;
+  @Output() clickPrevious = new EventEmitter<boolean>();
 
   steps: boolean[];
   currentImage = 0;
@@ -80,6 +80,17 @@ export class KombiComponent implements OnInit {
       element.classList.add('opacity_on');
       element.classList.add('animate__fadeIn');
     }
+  }
+
+  onClickPrevious(): void {
+    const queryElement = document.querySelector('.kombi-container');
+    queryElement.classList.remove('animate__fadeIn');
+    queryElement.classList.add('animate__fadeOut');
+    queryElement.addEventListener('animationend', () => {
+      queryElement.classList.remove('animate__fadeOut');
+      queryElement.classList.add('animate__fadeIn');
+      this.clickPrevious.emit(true);
+    });
   }
 
 }

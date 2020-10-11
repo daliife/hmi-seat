@@ -21,7 +21,7 @@ export class WelcomeVideoComponent implements OnInit {
     this.delay(1000);
   }
 
-  async delay(ms: number) {
+  async delay(ms: number): Promise<any> {
     await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => {
       this.clickSkip.emit(false);
       this.skip = false;
