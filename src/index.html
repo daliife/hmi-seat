@@ -6,12 +6,41 @@
   <title>HMI SEAT</title>
   <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" >
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
+
+  <div id="ie-wrapper"
+    style="z-index: 5; position: absolute; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: black; font-family: SeatBcn-Bold;">
+    <div class="warning animate__animated animate__backInDown" style="background-color: white; padding: 48px; color: black;width: 100%;">
+      <h1 style="font-weight: bold;
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
+      font-family: SeatBcn-Bold;">HMI SEAT</h1>
+      <h3 style="font-size:1.15rem; font-family: SeatBcn-Light;">For the best experience please open using Chrome or
+        Firefox in your PC.
+      </h3>
+    </div>
+  </div>
+
+  <script>
+    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
+    function isIE() {
+      ua = navigator.userAgent;
+      var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+      return is_ie;
+    }
+    if (isIE() || isMobileDevice) {
+      document.getElementById('ie-wrapper').style.display = "flex";
+    } else {
+      document.getElementById('ie-wrapper').style.display = "none";
+    }
+  </script>
+
   <app-root></app-root>
+
 </body>
 
 </html>
