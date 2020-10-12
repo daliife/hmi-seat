@@ -31,9 +31,11 @@
     border: none;
   }
   .welcome-hover{
-    transition: all 1s;
+    transition: all .25s;
     //animation-fill-mode: none;
     &:hover{
+      color: orange;
+      background-color: white;
       transform: scale(1.2);
     }
   }

@@ -1,5 +1,8 @@
-<div *ngIf="showVideo" class="welcome-video-container animate__animated" [ngClass]="{animate__fadeIn: showVideo,
-animate__fadeOut: skip}">
+<div *ngIf="showVideo" class="welcome-video-container animate__animated animate__fast" [ngClass]="
+{
+  animate__slideInDown: showVideo,
+  animate__slideOutUp: skip
+}">
   <video class="welcome-video" #videoPlayer (ended)="onClickSkip()" preload="auto" autoplay>
     <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
       type="video/mp4">

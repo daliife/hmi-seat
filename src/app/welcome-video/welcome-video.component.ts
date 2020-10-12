@@ -18,7 +18,7 @@ export class WelcomeVideoComponent implements OnInit {
 
   onClickSkip(): void {
     this.skip = true;
-    this.delay(1000);
+    this.delay(800);
   }
 
   async delay(ms: number): Promise<any> {

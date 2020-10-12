@@ -6,12 +6,16 @@
     <img src="https://via.placeholder.com/1920x540/000000">
   </div>
   <div class="kombi-interactives">
-    <a href="https://google.es" target="_blank" class="kombi-link">Download</a>
+    <button class="kombi-button" (click)="onClickPrevious()">Go Back</button>
+    <div class="ripple-container">
+      <a href="https://google.es" target="_blank" class="kombi-link">Download</a>
+    </div>
     <div>
       <button *ngFor="let step of steps;let i = index;" [disabled]="!step" (click)="nextStep(i+1)"
         class="button-test">{{(i+1) * 10}}km</button>
     </div>
-    <a href="https://google.es" target="_blank" class="kombi-link">Play</a>
-    <button (click)="onClickPrevious()">Go Back</button>
+    <div class="ripple-container">
+      <a href="https://google.es" target="_blank" class="kombi-link">Play</a>
+    </div>
   </div>
 </div>
