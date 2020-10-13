@@ -7,6 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { WelcomeVideoComponent } from './welcome-video/welcome-video.component';
 import { KombiComponent } from './kombi/kombi.component';
 import { ChronologyComponent } from './chronology/chronology.component';
+import { FutureComponent } from './future/future.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ChronologyComponent } from './chronology/chronology.component';
     WelcomeComponent,
     WelcomeVideoComponent,
     KombiComponent,
-    ChronologyComponent
+    ChronologyComponent,
+    FutureComponent
   ],
   imports: [
     BrowserModule

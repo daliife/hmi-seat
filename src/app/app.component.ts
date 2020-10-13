@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  steps: boolean[] = [true, false, false];
+  steps: boolean[] = [true, false, false, false, false];
   currentStep = 0;
   showVideo = false;
 
@@ -15,7 +15,7 @@ export class AppComponent {
   initialised2 = false;
 
   resetSteps(): void {
-    this.steps = [false, false, false];
+    this.steps = [false, false, false, false, false];
   }
 
   nextStep(): void {
@@ -34,6 +34,7 @@ export class AppComponent {
     if (!this.initialised && this.currentStep > 0){
       this.initialised = true;
     }
+    console.log('steps', this.currentStep, this.steps);
   }
 
   previousStep(): void {
