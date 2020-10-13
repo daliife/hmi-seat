@@ -3,7 +3,7 @@ $white-base-color: #FFFFFF;
 $black-base-color: #000000;
 $green-base-color: #9AAE02;
 
-.welcome-container {
+.future-container {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -14,19 +14,19 @@ $green-base-color: #9AAE02;
     left: 8.75rem;
     transform: translate(8.75rem, -50%);
   }
-  .welcome-title {
+  .future-title {
     font-size: 4.25rem;
     font-family: SeatBcn-Black;
     font-weight: bold;
   }
-  .welcome-subtitle {
+  .future-subtitle {
     font-size: 2.125rem;
     margin-top: 2.5rem;
     font-family: SeatBcn-Regular;
     font-weight: 400;
     line-height: 3.5rem;
   }
-  .welcome-button {
+  .future-button {
     font-size: 1.375rem;
     color: #FFFFFF;
     padding: 1rem 1.5625rem;
@@ -38,13 +38,11 @@ $green-base-color: #9AAE02;
     border: none;
     border-radius: 4px;
   }
-  .welcome-hover{
+  .future-hover{
     transition: all .25s;
-    //animation-fill-mode: none;
     &:hover{
       color: #EA5D1B;
       background-color: #FFFFFF;
-      transform: scale(1.2);
     }
   }
 }

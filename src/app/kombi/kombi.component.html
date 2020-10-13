@@ -1,21 +1,35 @@
 <div class="kombi-container animate__animated animate__faster animate__fadeIn">
   <div class="kombi-background">
-    <img (load)="fadeIn();" class="floating-img animate__animated" src="https://via.placeholder.com/1920x1080/00FFFF">
+    <img
+    (load)="fadeIn()"
+    class="floating-img animate__animated"
+    src="https://via.placeholder.com/1920x1080/00FFFF"
+    />
   </div>
   <div class="kombi-section">
-    <img src="https://via.placeholder.com/1920x540/000000">
+    <img src="assets/kombi/kombi.png" />
   </div>
   <div class="kombi-interactives">
     <button class="kombi-button" (click)="onClickPrevious()">Go Back</button>
     <div class="ripple-container">
-      <a href="https://google.es" target="_blank" class="kombi-link">Download</a>
+      <a href="https://google.es" target="_blank" class="kombi-link">
+        <img src="assets/kombi/watch.png" />
+      </a>
     </div>
     <div>
-      <button *ngFor="let step of steps;let i = index;" [disabled]="!step" (click)="nextStep(i+1)"
-        class="button-test">{{(i+1) * 10}}km</button>
+      <button
+        *ngFor="let step of steps; let i = index"
+        [disabled]="!step"
+        (click)="nextStep(i + 1)"
+        class="button-test"
+      >
+        {{ (i + 1) * 10 }}km
+      </button>
     </div>
     <div class="ripple-container">
-      <a href="https://google.es" target="_blank" class="kombi-link">Play</a>
+      <a href="https://google.es" target="_blank" class="kombi-link">
+        <img src="assets/kombi/download.png" />
+      </a>
     </div>
   </div>
 </div>

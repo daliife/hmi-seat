@@ -7,8 +7,7 @@ import { EventEmitter, Output, Component, OnInit, Input } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  @Input() initialAnimation;
-  @Output() clickStart = new EventEmitter<boolean>();
+  @Input() initialAnimation: boolean;
   @Output() clickNext = new EventEmitter<boolean>();
 
   constructor() { }
@@ -21,9 +20,6 @@ export class WelcomeComponent implements OnInit {
     }
   }
 
-  onClickStart(): void {
-    this.clickStart.emit(true);
-  }
   onClickNext(): void {
     const queryElement = document.querySelector('#welcome-animation');
     queryElement.classList.remove('animate__zoomIn');
