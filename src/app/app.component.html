@@ -10,12 +10,18 @@
   (clickSkip)="toggleVideo($event)"
 ></app-welcome-video>
 
-<app-chronology *ngIf="steps[1]" 
+
+<app-carousel-timeline *ngIf="steps[1]"  [items]='carouselData'></app-carousel-timeline>
+
+
+<app-chronology *ngIf="steps[2]" 
   [initialAnimation]="!initialised2"
   (clickPrevious)="previousStep()" 
   (clickNext)="nextStep()"
 ></app-chronology>
 
-<app-kombi *ngIf="steps[2]" 
+
+<app-kombi *ngIf="steps[3]" 
   (clickPrevious)="previousStep()" 
 ></app-kombi>
+
