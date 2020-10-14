@@ -34,31 +34,9 @@ export class KombiComponent implements OnInit {
   }
 
   getAngle(index: number): number {
-    let resultAngle = 0;
-    switch (index){
-      case -1:
-        resultAngle = -30;
-        break;
-      case 0:
-        resultAngle = 0;
-        break;
-      case 1:
-        resultAngle = 40;
-        break;
-      case 2:
-        resultAngle = 70;
-        break;
-      case 3:
-        resultAngle = 105;
-        break;
-      case 4:
-        resultAngle = 145;
-        break;
-      case 5:
-        resultAngle = 180;
-        break;
-    }
-    return resultAngle;
+    const resultAngle = 0;
+    if (index === -1) { return -30; }
+    else { return index * 36; }
   }
 
   nextStep(newIndex: number): void {

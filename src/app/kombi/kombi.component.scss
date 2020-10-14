@@ -2,7 +2,7 @@ $ripple-color: #0bcff2;
 .kombi-container {
   .button-test {
     margin: 1rem 2rem;
-    font-size: 2rem;
+    font-size: .8rem;
     color: white;
     font-family: SeatBcn-Bold;
     background-color: transparent;
@@ -88,7 +88,6 @@ $ripple-color: #0bcff2;
     display: flex;
     justify-content: center;
     bottom: 32%;
-    //align-items: flex-end;
     img{
       width: 25rem;
       position: absolute;
