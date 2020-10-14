@@ -4,5 +4,18 @@
       type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <button class="skip-button" (click)="onClickSkip()">{{skipLabel}}</button>
+  <!-- <button class="skip-button" (click)="onClickSkip()">{{skipLabel}}</button> -->
+  <a class='skip-button animated-arrow' (click)="onClickSkip()">
+    <span class='the-arrow -left'>
+      <span class='shaft'></span>
+    </span>
+    <span class='main'>
+      <span class='text'>
+        Explore More
+      </span>
+      <span class='the-arrow -right'>
+        <span class='shaft'></span>
+      </span>
+    </span>
+  </a>
 </div>
