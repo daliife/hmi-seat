@@ -1,7 +1,7 @@
 <app-navbar-logo></app-navbar-logo>
 
 <app-welcome
-  *ngIf="steps[4]"
+  *ngIf="steps[0]"
   [initialAnimation]="!initialised"
   (clickStart)="toggleVideo($event)"
   (clickNext)="nextStep()"
@@ -26,6 +26,6 @@
 ></app-future>
 
 <app-kombi 
-  *ngIf="steps[0]" 
+  *ngIf="steps[4]" 
   (clickPrevious)="previousStep()"
 ></app-kombi>
