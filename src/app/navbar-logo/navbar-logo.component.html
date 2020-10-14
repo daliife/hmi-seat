@@ -3,8 +3,16 @@
   [ngClass]="{ 'hide-logo': !showLogos }"
 >
   <div id="logo-left-align">
-    <img id="logo-seat" src="assets/logos/seat.svg" />
-    <img id="logo-cupra" src="assets/logos/cupra.svg" />
+    <img id="logo-seat" src="assets/logos/seat.svg" (click)="onClickImage()" />
+    <img
+      id="logo-cupra"
+      src="assets/logos/cupra.svg"
+      (click)="onClickImage()"
+    />
   </div>
-  <img id="logo-everis" src="assets/logos/everis.svg" />
+  <img
+    id="logo-everis"
+    src="assets/logos/everis.svg"
+    (click)="onClickImage()"
+  />
 </div>

@@ -12,7 +12,9 @@ export class KombiComponent implements OnInit {
 
   steps: boolean[];
   currentImage = 0;
-  flag = true;
+  flag = false;
+  clickableLinks = false;
+  angleNeddle = 0;
 
   constructor() { }
 
@@ -23,35 +25,22 @@ export class KombiComponent implements OnInit {
   resetSteps(): void {
     this.steps = [true, false, false, false, false, false];
     this.currentImage = 0;
+    this.angleNeddle = this.getAngle(-1);
   }
 
   getPath(index: number): string {
-    let result = 'https://via.placeholder.com/1920x1080/';
-    switch (index) {
-      case 0:
-        result += '00FFFF';
-        break;
-      case 1:
-        result += '00FF00';
-        break;
-      case 2:
-        result += '0000FF';
-        break;
-      case 3:
-        result += 'FF00FF';
-        break;
-      case 4:
-        result += 'FFF0FF';
-        break;
-      case 5:
-        result += 'F000FF';
-        break;
-    }
-    return result;
+    const res = 1;
+    return `assets/kombi/01.png`;
+  }
+
+  getAngle(index: number): number {
+    const resultAngle = 0;
+    if (index === -1) { return -30; }
+    else { return index * 36; }
   }
 
   nextStep(newIndex: number): void {
-    if (this.currentImage !== newIndex && newIndex < this.steps.length) {
+    if (this.currentImage !== newIndex && newIndex <= this.steps.length) {
       const newPath = this.getPath(newIndex);
       const queryElement = document.querySelector('.floating-img');
       if (!this.flag) {
@@ -68,8 +57,14 @@ export class KombiComponent implements OnInit {
           queryElement.classList.add('opacity_off');
         });
       }
-      this.currentImage = newIndex;
-      this.steps[this.currentImage] = true;
+      this.angleNeddle = this.getAngle(newIndex - 1);
+      if (newIndex < this.steps.length){
+        this.currentImage = newIndex;
+        this.steps[this.currentImage] = true;
+      }
+      if (newIndex === this.steps.length ) {
+        this.clickableLinks = true;
+      }
     }
   }
 
