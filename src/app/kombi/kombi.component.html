@@ -1,22 +1,34 @@
-<div class="kombi-container animate__animated animate__faster animate__fadeIn animate__delay-1s">
-  <div class="kombi-background">
+<div class="kombi-container">
+  <div
+    class="kombi-background animate__animated animate__fadeIn animate__delay-2s"
+  >
     <img
-    (load)="fadeIn()"
-    class="floating-img animate__animated"
-    src="https://via.placeholder.com/1920x1080/00FFFF"
+      (load)="fadeIn()"
+      class="floating-img"
+      src="assets/kombi/01.png"
     />
   </div>
   <div class="kombi-section">
-    <img src="assets/kombi/kombi.svg" class="animate__animated animate__fadeInUp"/>
+    <img
+      src="assets/kombi/kombi.png"
+      class="animate__animated animate__fadeInUp"
+    />
   </div>
-  <div class="kombi-interactives">
-    <!-- <button class="kombi-button" (click)="onClickPrevious()">Go Back</button> -->
+  <div class="kombi-interactives animate__animated animate__fadeIn animate__delay-1s">
     <div class="ripple-container">
       <a href="https://google.es" target="_blank" class="kombi-link">
-        <img src="assets/kombi/watch.png" />
+        <img src="assets/kombi/video.png" />
       </a>
     </div>
-    <div>
+    <div class="ripple-container">
+      <a href="https://google.es" target="_blank" class="kombi-link">
+        <img src="assets/kombi/download.png" />
+      </a>
+    </div>
+  </div>
+  <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
+    <!-- <button class="kombi-button" (click)="onClickPrevious()">Go Back</button> -->
+    <!-- <div class="steps">
       <button
         *ngFor="let step of steps; let i = index"
         [disabled]="!step"
@@ -25,11 +37,8 @@
       >
         {{ (i + 1) * 10 }}km
       </button>
-    </div>
-    <div class="ripple-container">
-      <a href="https://google.es" target="_blank" class="kombi-link">
-        <img src="assets/kombi/download.png" />
-      </a>
-    </div>
+    </div> -->
+    <img src="assets/kombi/sphere.png">
+    <img src="assets/kombi/needle.png">
   </div>
 </div>
