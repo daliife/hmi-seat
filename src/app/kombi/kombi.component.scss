@@ -47,8 +47,14 @@ $ripple-color: #0bcff2;
       &:hover {
         transform: scale(1.15);
       }
+      img{
+        width: 12rem;
+        height: 12rem;
+      }
     }
     .ripple-container {
+      width: 12rem;
+      height: 12rem;
       display: flex;
       text-align: center;
       border-radius: 50%;
