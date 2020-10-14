@@ -15,12 +15,15 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 3rem 4rem;
-    font-size: 3rem;
+    margin-right: 10rem;
+    margin-bottom: 3.75rem;
+    font-size: 1.375rem;
     color: red;
     background-color: transparent;
     border: none;
     font-family: SeatBcn-Bold;
+    font-weight: 700;
+    line-height: 2rem;
     z-index: 25;
     outline: none;
     &:hover{
