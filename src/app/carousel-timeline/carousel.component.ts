@@ -90,17 +90,17 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
     // if (containerEventsArray[currentPos].nativeElement.style.filter === ` hue-rotate(210deg)`){
     //       containerEventsArray[currentPos].nativeElement.style.filter = ` hue-rotate(0deg))`;
     // }
-    containerEventsArray[lastPos].nativeElement.style.filter = `blur(9px)`;
-    if (
-      containerEventsArray[currentPos].nativeElement.style.filter ===
-      `blur(9px)`
-    ) {
-      containerEventsArray[currentPos].nativeElement.style.filter = `blur(0px)`;
-    }
-    // containerEventsArray[lastPos].nativeElement.style.filter = `grayscale(1)`;
-    // if (containerEventsArray[currentPos].nativeElement.style.filter === `grayscale(1)`){
-    //       containerEventsArray[currentPos].nativeElement.style.filter = `grayscale(0)`;
+    // containerEventsArray[lastPos].nativeElement.style.filter = `blur(9px)`;
+    // if (containerEventsArray[currentPos].nativeElement.style.filter === `blur(9px)`){
+    //       containerEventsArray[currentPos].nativeElement.style.filter = `blur(0px)`;
     // }
+
+    if (containerEventsArray[currentPos].nativeElement.style.filter === `blur(9px)`){
+          containerEventsArray[currentPos].nativeElement.style.filter = `blur(0px)`;
+    }else{
+          containerEventsArray[lastPos].nativeElement.style.filter = `blur(9px)`;
+
+    }
   }
 
   updateTimelinePosition(currentPosition: number): void {
