@@ -1,20 +1,27 @@
 <div class="welcome-video-container animate__animated animate__fadeIn">
-  <video class="welcome-video" #videoPlayer (ended)="onVideoEnded()" preload="auto" autoplay>
-    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-      type="video/mp4">
+  <video
+    class="welcome-video"
+    #videoPlayer
+    (ended)="onVideoEnded()"
+    preload="auto"
+    autoplay
+  >
+    <source
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+      type="video/mp4"
+    />
     Your browser does not support the video tag.
   </video>
-  <!-- <button class="skip-button" (click)="onClickSkip()">{{skipLabel}}</button> -->
-  <a class='skip-button animated-arrow' (click)="onClickSkip()">
-    <span class='the-arrow -left'>
-      <span class='shaft'></span>
+  <a class="skip-button animated-arrow" (click)="onClickSkip()">
+    <span class="the-arrow -left">
+      <span class="shaft"></span>
     </span>
-    <span class='main'>
-      <span class='text'>
-        {{skipLabel}}
+    <span class="main">
+      <span class="text">
+        {{ skipLabel }}
       </span>
-      <span class='the-arrow -right'>
-        <span class='shaft'></span>
+      <span class="the-arrow -right">
+        <span class="shaft"></span>
       </span>
     </span>
   </a>
