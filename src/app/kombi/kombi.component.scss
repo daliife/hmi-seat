@@ -68,7 +68,7 @@ $ripple-color: #024c5f;
       text-align: center;
       border-radius: 50%;
       animation: ripple 2s linear infinite;
-      margin: 0px 20rem;
+      margin: 0px 19rem;
     }
     @keyframes ripple {
       0% {
@@ -91,7 +91,7 @@ $ripple-color: #024c5f;
     justify-content: center;
     bottom: 32%;
     img {
-      width: 25rem;
+      width: 32rem;
       position: absolute;
     }
   }

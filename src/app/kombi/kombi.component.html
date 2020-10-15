@@ -46,19 +46,22 @@
       </a>
     </div>
   </div>
-  <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
-    <!-- <button class="kombi-button" (click)="onClickPrevious()">Go Back</button> -->
-    <div class="steps" style="z-index: 9">
+  <div class="kombi-steps-images animate__animated animate__fadeIn animate__delay-1s">
+    <div class="steps" style="z-index: 9;     position: absolute;
+    bottom: 0;
+    display: flex;">
       <button
         *ngFor="let step of steps; let i = index"
         [disabled]="!step"
         (click)="nextStep(i + 1)"
         class="button-test"
       >
-        {{ (i + 1) * 10 }}km
+        0{{ (i + 1)}}
       </button>
       <button (click)="onClickAdditional();">ADDITIONAL</button>
     </div>
+  </div>
+  <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
     <img src="assets/kombi/sphere.png" />
     <img
       id="kombi-needle"
