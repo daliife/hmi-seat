@@ -20,21 +20,4 @@
     font-family: SeatBcn-Light;
     line-height: 3.5rem;
   }
-  .chronology-button {
-    font-size: 1.5rem;
-    color: white;
-    padding: 1rem 2.5rem;
-    margin-top: 3rem;
-    background-color: orange;
-    font-family: SeatBcn-Black;
-    outline: none;
-    border: none;
-  }
-  .chronology-hover{
-    transition: all 1s;
-    //animation-fill-mode: none;
-    &:hover{
-      transform: scale(1.2);
-    }
-  }
 }
