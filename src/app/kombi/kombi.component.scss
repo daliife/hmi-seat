@@ -1,8 +1,8 @@
-$ripple-color: #0bcff2;
+$ripple-color: #024c5f;
 .kombi-container {
   .button-test {
     margin: 1rem 2rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: white;
     font-family: SeatBcn-Bold;
     background-color: transparent;
@@ -18,9 +18,11 @@ $ripple-color: #0bcff2;
     height: 100%;
     .floating-img {
       height: 100%;
+      object-fit: contain;
+      width: 100%;
     }
   }
-  .kombi-section{
+  .kombi-section {
     position: fixed;
   }
   .kombi-background {
@@ -88,7 +90,7 @@ $ripple-color: #0bcff2;
     display: flex;
     justify-content: center;
     bottom: 32%;
-    img{
+    img {
       width: 25rem;
       position: absolute;
     }
