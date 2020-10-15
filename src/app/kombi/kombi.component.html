@@ -19,11 +19,9 @@
   >
     <div class="ripple-container">
       <a
-       
+        href="https://vod-progressive.akamaized.net/exp=1602787711~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3707%2F18%2F468537180%2F2082335416.mp4~hmac=bcafe1a157c97899d5db595743487f7cb2817df54e8c02fc46077fb528263c3a/vimeo-prod-skyfire-std-us/01/3707/18/468537180/2082335416.mp4?filename=SEAT+HMI_Future+%5Bdraft%5D.mp4"
         target="_blank"
         class="kombi-link"
-        data-toggle="modal"
-        data-target="#videoModal"
         [ngStyle]="{
           'pointer-events': !clickableLinks ? 'none' : 'auto',
           opacity: !clickableLinks ? '0.5' : '1',
@@ -36,6 +34,7 @@
     <div class="ripple-container">
       <a
         href="https://google.es"
+        download
         target="_blank"
         class="kombi-link"
         [ngStyle]="{
@@ -48,23 +47,16 @@
       </a>
     </div>
   </div>
-  <div class="kombi-steps-images animate__animated animate__fadeIn animate__delay-1s">
-    <div class="steps" style="z-index: 9;     position: absolute;
-    bottom: 0;
-    display: flex;">
-      <button
-        *ngFor="let step of steps; let i = index"
-        [disabled]="!step"
-        (click)="nextStep(i + 1)"
-        class="button-test"
-      >
-        0{{ (i + 1)}}
-      </button>
-      <button (click)="onClickAdditional();">ADDITIONAL</button>
-    </div>
-  </div>
+  <diV
+    class="kombi-additional-button animate__animated animate__fadeIn animate__delay-1s"
+  >
+    <img (click)="onClickAdditional()" src="assets/kombi/more.png" />
+  </diV>
   <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
-    <img class="animate__animated animate__headShake animate__delay-3s" src="assets/kombi/sphere.png" />
+    <img
+      class="animate__animated animate__headShake animate__delay-3s"
+      src="assets/kombi/sphere_without.png"
+    />
     <img
       id="kombi-needle"
       src="assets/kombi/needle.png"
@@ -73,8 +65,37 @@
         transform: rotate({{ angleNeddle }}deg);"
     />
   </div>
+  <div
+    class="kombi-steps-images animate__animated animate__fadeIn animate__delay-1s"
+  >
+    <div
+      class="steps"
+      style="
+        z-index: 55;
+        bottom: 0;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 20rem;
+        height: 20rem;
+      "
+    >
+      <button
+        *ngFor="let step of steps; let i = index"
+        [disabled]="!step"
+        (click)="nextStep(i + 1)"
+        class="button-test"
+        [ngStyle]="{
+          left: positions[i].x + '%',
+          bottom: positions[i].y + '%'
+        }"
+      >
+        0{{ i + 1 }}
+      </button>
+    </div>
+  </div>
 </div>
-
 
 <!--testing-->
 <!-- <div
