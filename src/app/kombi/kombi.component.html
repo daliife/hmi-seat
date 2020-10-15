@@ -2,7 +2,11 @@
   <div
     class="kombi-background animate__animated animate__fadeIn animate__delay-2s"
   >
-    <img (load)="fadeIn()" class="floating-img" src="assets/kombi/01.png" />
+    <img
+      (load)="fadeIn()"
+      class="floating-img animate__animated animate__faster"
+      src="assets/kombi/01.png"
+    />
   </div>
   <div class="kombi-section">
     <img
@@ -53,6 +57,7 @@
       >
         {{ (i + 1) * 10 }}km
       </button>
+      <button (click)="onClickAdditional();">ADDITIONAL</button>
     </div>
     <img src="assets/kombi/sphere.png" />
     <img
