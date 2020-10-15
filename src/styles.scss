@@ -49,6 +49,13 @@ $green-base-color: #9aae02;
   }
 }
 
+.center-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // Font imports
 
 @font-face {
