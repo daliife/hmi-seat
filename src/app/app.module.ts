@@ -7,7 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { WelcomeVideoComponent } from './welcome-video/welcome-video.component';
 import { KombiComponent } from './kombi/kombi.component';
 import { FutureComponent } from './future/future.component';
-import { CarouselTimelineComponent } from './carousel-timeline/carousel.component';
+import { CarouselTimelineComponent } from './carousel-timeline/carousel-timeline.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
