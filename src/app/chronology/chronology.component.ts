@@ -34,6 +34,8 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
   public currentPosition = 0;
   public screenWidth: any;
 
+  imagePath = 'assets/chronology/50s.png';
+
   currentImage = 0;
 
   constructor() {
@@ -69,26 +71,24 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
 
   animateWithFade(newPath: string): void {
     const queryElement = document.querySelector('.floating-img');
-    queryElement.classList.remove('animate__fadeIn');
-    queryElement.classList.remove('animate__fadeOut');
+    queryElement.classList?.remove('animate__fadeIn');
+    queryElement.classList?.remove('animate__fadeOut');
+    queryElement.classList?.remove('opacity_on');
 
     queryElement.classList.add('animate__fadeOut');
     queryElement.addEventListener('animationend', () => {
       queryElement.classList.remove('animate__fadeOut');
-      queryElement.classList.remove('opacity_on');
       queryElement.classList.add('opacity_off');
-      $('.floating-img').attr('src', newPath);
-      queryElement.classList.remove('opacity_off');
-      queryElement.classList.add('opacity_on');
-      queryElement.classList.add('animate__fadeIn');
+      this.imagePath = newPath;
     });
   }
-
+  
   fadeIn(): void {
-    const element = document.querySelector('.floating-img');
-    element.classList.remove('opacity_off');
-    element.classList.add('opacity_on');
-    element.classList.add('animate__fadeIn');
+    console.log('loaded');
+    const queryElement = document.querySelector('.floating-img');
+    queryElement.classList.remove('opacity_off');
+    queryElement.classList.add('opacity_on');
+    queryElement.classList.add('animate__fadeIn');
   }
 
   setCurrentPosition(position: number): void {
@@ -120,14 +120,11 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
 
     let result: number;
     result = (widthBetweenEvents / widthParent) * currentPos;
-    this.translateTimeline(result);
-  }
-
-  translateTimeline(value: number): void {
     ChronologyComponent.setTransformValue(
       this.fillingLine.nativeElement,
       'scaleX',
-      value
+      result
     );
   }
+
 }

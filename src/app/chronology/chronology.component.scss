@@ -12,6 +12,13 @@
   }
 }
 
+.opacity_off {
+  opacity: 0;
+}
+.opacity_on {
+  opacity: 1;
+}
+
 .dsc-carousel {
   width: 100%;
   display: flex;
@@ -51,6 +58,8 @@
       -webkit-filter: blur(0px);
     }
   }
+
+  
 
   &__container {
     position: absolute;

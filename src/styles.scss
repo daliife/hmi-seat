@@ -31,6 +31,13 @@ $white-base-color: #ffffff;
 $black-base-color: #000000;
 $green-base-color: #9aae02;
 
+.opacity_off {
+  opacity: 0;
+}
+.opacity_on {
+  opacity: 1;
+}
+
 .seat-button {
   font-size: 1.375rem;
   color: #ffffff;
