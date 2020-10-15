@@ -1,6 +1,6 @@
 import { IfStmt } from '@angular/compiler';
 import { AfterViewInit } from '@angular/core';
-import { Component, OnInit, Input, QueryList, ViewChild, ViewChildren, ElementRef, HostListener } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, QueryList, ViewChild, ViewChildren, ElementRef, HostListener, Output } from '@angular/core';
 import { ICarouselItem } from './Icarousel-item.metadata';
 
 @Component({
@@ -20,6 +20,8 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
   @Input() height = 500;
   @Input() isFullScreen = false;
   @Input() items: ICarouselItem[] = [];
+  @Output() clickNext = new EventEmitter<boolean>();
+
 
 
   public finalHeight: string | number = 0;
@@ -60,8 +62,14 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
   }
 
   setCurrentPosition(position: number) {
+    const timelineEventsArray = this.timelineEvents.toArray();
     this.currentPosition = position;
     this.items.find(i => i.id === 0).marginLeft = -100 * position;
+
+    if (this.currentPosition === this.items.length - 1 ){
+      console.log(this.items[position].id );
+      this.clickNext.emit(true);
+    }
     this.updateTimelinePosition(this.currentPosition);
     this.addStyleToContent(this.currentPosition);
   }
@@ -70,14 +78,6 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
     const containerEventsArray = this.containerEvents.toArray();
     let currentPos = currentPosition;
     let lastPos = currentPosition === 0 ? 1 : currentPosition - 1;
-
-    // containerEventsArray[lastPos].nativeElement.style.filter = ` blur(9px)`;
-    // if (containerEventsArray[currentPos].nativeElement.style.filter === ` blur(9px)`){
-    //       containerEventsArray[currentPos].nativeElement.style.filter = ` blur(0px)`;
-    //       console.log(containerEventsArray[currentPos].nativeElement.style.filter);
-    // }else{
-    //    containerEventsArray[lastPos].nativeElement.style.filter = ` blur(9px)`;
-    //              console.log(containerEventsArray[currentPos].nativeElement.style.filter);
 
     // }
     // containerEventsArray[lastPos].nativeElement.style.filter = ` hue-rotate(210deg)`;
@@ -103,14 +103,7 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
     let lastPos = currentPosition === 0 ? 1 : currentPosition - 1;
 
     let widthBetweenEvents: number;
-
-    // if (currentPosition === 1) {
-    // tslint:disable-next-line:max-line-length
       widthBetweenEvents = CarouselTimelineComponent.itemDiff(timelineEventsArray[currentPos].nativeElement.offsetLeft, timelineEventsArray[lastPos].nativeElement.offsetLeft);
-    // }else{
-    //   // tslint:disable-next-line:max-line-length
-    //   widthBetweenEvents = CarouselTimelineComponent.itemDiff(timelineEventsArray[currentPos].nativeElement.offsetLeft, timelineEventsArray[lastPos].nativeElement.offsetLeft);
-    // }
 
       let result: number;
       result = ( widthBetweenEvents / widthParent ) * currentPos;

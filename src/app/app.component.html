@@ -14,23 +14,24 @@
 
 
 <app-carousel-timeline *ngIf="steps[2]"  
-[items]='carouselData'>
+[items]='carouselData'
+(clickNext)="nextStep()">
 </app-carousel-timeline>
 
 
-<app-chronology *ngIf="steps[3]" 
+<!-- <app-chronology *ngIf="steps[]" 
   [initialAnimation]="!initialised2"
   (clickPrevious)="previousStep()"
   (clickNext)="nextStep()"
-></app-chronology>
+></app-chronology> -->
 
 <app-future
-  *ngIf="steps[4]"
+  *ngIf="steps[3]"
   (clickPrevious)="previousStep()"
   (clickNext)="nextStep()"
 ></app-future>
 
 <app-kombi 
-  *ngIf="steps[5]" 
+  *ngIf="steps[4]" 
   (clickPrevious)="previousStep()"
 ></app-kombi>
