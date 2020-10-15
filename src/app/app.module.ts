@@ -8,6 +8,9 @@ import { WelcomeVideoComponent } from './welcome-video/welcome-video.component';
 import { KombiComponent } from './kombi/kombi.component';
 import { ChronologyComponent } from './chronology/chronology.component';
 import { FutureComponent } from './future/future.component';
+import {CarouselTimelineComponent} from './carousel-timeline/carousel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +20,12 @@ import { FutureComponent } from './future/future.component';
     WelcomeVideoComponent,
     KombiComponent,
     ChronologyComponent,
-    FutureComponent
+    FutureComponent,
+    CarouselTimelineComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ICarouselItem } from './carousel-timeline/Icarousel-item.metadata';
+import { CAROUSEL_DATA_ITEMS } from './model/carousel.const';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
 
   steps: boolean[] = [true, false, false, false, false];
   currentStep = 0;
   showVideo = false;
 
   initialised = false;
+  initialised1 = false;
   initialised2 = false;
 
   resetSteps(): void {
@@ -54,5 +58,7 @@ export class AppComponent {
   toggleVideo(newValue: boolean): void {
     this.showVideo = newValue;
   }
+
+
 
 }

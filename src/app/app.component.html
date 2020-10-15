@@ -12,20 +12,25 @@
   (clickSkip)="nextStep()"
 ></app-welcome-video>
 
-<app-chronology
-  *ngIf="steps[2]"
+
+<app-carousel-timeline *ngIf="steps[2]"  
+[items]='carouselData'>
+</app-carousel-timeline>
+
+
+<app-chronology *ngIf="steps[3]" 
   [initialAnimation]="!initialised2"
   (clickPrevious)="previousStep()"
   (clickNext)="nextStep()"
 ></app-chronology>
 
 <app-future
-  *ngIf="steps[3]"
+  *ngIf="steps[4]"
   (clickPrevious)="previousStep()"
   (clickNext)="nextStep()"
 ></app-future>
 
 <app-kombi 
-  *ngIf="steps[4]" 
+  *ngIf="steps[5]" 
   (clickPrevious)="previousStep()"
 ></app-kombi>
