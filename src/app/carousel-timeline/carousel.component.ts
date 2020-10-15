@@ -67,7 +67,6 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
     this.items.find(i => i.id === 0).marginLeft = -100 * position;
 
     if (this.currentPosition === this.items.length - 1 ){
-      console.log(this.items[position].id );
       this.clickNext.emit(true);
     }
     this.updateTimelinePosition(this.currentPosition);
@@ -84,14 +83,17 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
     // if (containerEventsArray[currentPos].nativeElement.style.filter === ` hue-rotate(210deg)`){
     //       containerEventsArray[currentPos].nativeElement.style.filter = ` hue-rotate(0deg))`;
     // }
-    containerEventsArray[lastPos].nativeElement.style.filter = `blur(9px)`;
+    // containerEventsArray[lastPos].nativeElement.style.filter = `blur(9px)`;
+    // if (containerEventsArray[currentPos].nativeElement.style.filter === `blur(9px)`){
+    //       containerEventsArray[currentPos].nativeElement.style.filter = `blur(0px)`;
+    // }
+
     if (containerEventsArray[currentPos].nativeElement.style.filter === `blur(9px)`){
           containerEventsArray[currentPos].nativeElement.style.filter = `blur(0px)`;
+    }else{
+          containerEventsArray[lastPos].nativeElement.style.filter = `blur(9px)`;
+
     }
-    // containerEventsArray[lastPos].nativeElement.style.filter = `grayscale(1)`;
-    // if (containerEventsArray[currentPos].nativeElement.style.filter === `grayscale(1)`){
-    //       containerEventsArray[currentPos].nativeElement.style.filter = `grayscale(0)`;
-    // }
 
  }
 
