@@ -45,16 +45,15 @@ $green-base-color: #9aae02;
   transition: all 0.25s;
   cursor: pointer;
   &:hover {
-    color: #ea5d1b;
-    background-color: #ffffff;
+    background-color: #F08D5F;
   }
 }
 
 .center-align {
   position: absolute;
   top: 50%;
-  left: 30%;
-  transform: translate(-30%, -50%);
+  transform: translate(0, -50%);
+  margin: 0 5.875rem 0 9.3125rem;
 }
 
 // Font imports
