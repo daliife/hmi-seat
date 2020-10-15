@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
   &::before {
     content: "";
     height: 100%;
@@ -20,7 +21,13 @@
     height: 100vh;
     align-self: stretch;
     display: flex;
-    overflow: hidden;
+
+    // &-container {
+    //   width: 100%;
+    //   background-repeat: no-repeat;
+    //   background-size: 100% 100%;
+    //   background-position: center;
+    // }
 
     &-item {
       float: left;
@@ -33,8 +40,30 @@
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center;
+      // transition: 1s all ease-in;
+
       transition: 1s all ease-in;
+      // -webkit-filter: grayscale(0);
+      // filter: grayscale(0);
+      // filter: hue-rotate(0deg);
+      filter: blur(0px);
+      -webkit-filter: blur(0px);
     }
+  }
+
+  &__container {
+    position: absolute;
+    // z-index: 1;
+    left: 11%;
+    bottom: 48px;
+    height: 2px;
+    width: 78%;
+    background: #dfdfdf;
+    // -webkit-transition: -webkit-transform 0.4s;
+    // -moz-transition: -moz-transform 0.4s;
+    // transition: transform 0.4s;
+    display: flex;
+    align-self: flex-end;
   }
 
   &__steps {
@@ -42,25 +71,26 @@
     bottom: 40px;
     width: 100%;
     display: flex;
-    justify-content: center;
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
+    justify-content: space-evenly;
     &-step {
       height: 17.59px;
       width: 18px;
       margin: 0 5px;
       border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.7);
-      border-color: #ea5d1b;
+      border-color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.95);
       cursor: pointer;
       transition: 0.75s all ease-in-out;
       transform: translateZ(0px);
-      scroll-snap-align: center;
+
+      animation: heartBeat;
+      animation-duration: 5s;
+
       &:hover,
       &-active {
-        opacity: 0.7;
-        background: #fff;
         background-color: #ea5d1b;
+        border-color: #ea5d1b;
       }
       &-older-event {
         border-color: #ea5d1b;
@@ -78,13 +108,14 @@
   &__filling-line {
     position: absolute;
     z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
+    left: 11%;
+    top: 10px;
+    height: 2px;
     width: 100%;
     background-color: #ea5d1b;
 
-    transform: scaleX(0.101613);
+    // transform: scaleX(0.101613);
+    transform: scaleX(0);
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
     -ms-transform-origin: left center;
