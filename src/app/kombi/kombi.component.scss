@@ -1,16 +1,28 @@
 $ripple-color: #024c5f;
 .kombi-container {
+  .kombi-additional-button {
+    position: absolute;
+    bottom: 14rem;
+    right: 34%;
+    img {
+      width: 5rem;
+      height: 5rem;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
   .button-test {
-    margin: 1rem 2rem;
-    font-size: 0.8rem;
+    font-size: 2rem;
+    position: absolute;
     color: white;
-    font-family: SeatBcn-Bold;
+    font-family: SeatBcn-Regular;
     background-color: transparent;
     border: none;
     outline: none;
     &:active,
     &:enabled {
-      background-color: orangered;
+      color: orangered;
     }
   }
   .kombi-background {
@@ -22,9 +34,6 @@ $ripple-color: #024c5f;
       width: 100%;
     }
   }
-  .kombi-section {
-    position: fixed;
-  }
   .kombi-background {
     position: absolute;
     max-width: 100%;
@@ -32,6 +41,8 @@ $ripple-color: #024c5f;
     width: 100%;
   }
   .kombi-section {
+    position: fixed;
+    opacity: .5!important;
     bottom: 0;
     width: 100%;
     img {
@@ -114,7 +125,6 @@ $ripple-color: #024c5f;
   border: none;
   z-index: 10;
 }
-
 
 // ------------------
 .modal-dialog {
@@ -200,4 +210,3 @@ $ripple-color: #024c5f;
   transform: translatey(0px);
   animation: float 3s ease-in-out infinite;
 }
-
