@@ -9,7 +9,8 @@
     right: 0;
     bottom: 0;
     min-width: 100%;
-    min-height: 100%;
+    max-height: 100%;
+    width: 100%;
   }
   .skip-button {
     position: absolute;
@@ -20,7 +21,7 @@
     color: #ea5d1b;
     background-color: transparent;
     border: none;
-    font-family: 'SeatBcn-Bold'!important;
+    font-family: "SeatBcn-Bold" !important;
     font-size: 1.375rem;
     font-weight: 700;
     line-height: 2rem;
@@ -194,7 +195,6 @@ $arrow-head-thickness: $shaft-thickness;
       }
     }
   }
-
   > .main {
     display: flex;
     align-items: center;
@@ -203,8 +203,10 @@ $arrow-head-thickness: $shaft-thickness;
     > .text {
       margin: 0 $text-arrow-space 0 0;
       line-height: 1;
+      font-family: "SeatBcn-Bold";
+      font-size: 1.375rem;
+      font-weight: 700;
     }
-
     > .the-arrow {
       position: relative;
     }
