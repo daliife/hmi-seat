@@ -53,6 +53,7 @@ $ripple-color: #024c5f;
       outline: none;
       transition: all 0.2s;
       text-decoration: none;
+      cursor: pointer;
       &:hover {
         transform: scale(1.05);
       }
@@ -199,56 +200,4 @@ $ripple-color: #024c5f;
   transform: translatey(0px);
   animation: float 3s ease-in-out infinite;
 }
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-40px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
-.vibrate-effect {
-  transform: translatex(0px);
-  animation: vibrate 2s ease-in-out infinite;
-}
-@keyframes vibrate {
-  0% {
-    transform: translatex(0px);
-  }
-  10% {
-    transform: translatex(5px);
-  }
-  20% {
-    transform: translatex(0px);
-  }
-  100% {
-    transform: translatex(0px);
-  }
-}
-.sound-effect {
-  transform: scale(1);
-  animation: sound 1s ease-in-out infinite;
-}
-@keyframes sound {
-  0% {
-    transform: scale(1);
-  }
-  15% {
-    transform: scale(1.1);
-  }
-  30% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.floating-effect:hover,
-.vibrate-effect:hover,
-.rotate-effect:hover,
-.sound-effect:hover {
-  animation-play-state: paused;
-}
+

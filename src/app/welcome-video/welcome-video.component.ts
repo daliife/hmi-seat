@@ -10,14 +10,14 @@ export class WelcomeVideoComponent implements OnInit {
   @Input() showVideo = false;
   @Output() clickSkip = new EventEmitter<boolean>();
 
-  skipLabel = 'Skip Intro';
+  skipLabel = 'Skip the video ';
 
   constructor() { }
 
   ngOnInit(): void { }
 
   onVideoEnded(): void{
-    this.skipLabel = 'Next';
+    this.skipLabel = 'Start';
   }
 
   onClickSkip(): void {

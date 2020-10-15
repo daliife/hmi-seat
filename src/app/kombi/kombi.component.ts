@@ -45,7 +45,7 @@ export class KombiComponent implements OnInit {
     this.animateWithFade(res);
   }
 
-  animateWithFade(newPath: string): void{
+  animateWithFade(newPath: string, newIndex?: number): void{
     const queryElement = document.querySelector('.floating-img');
     if (!this.flag) {
       $('.floating-img').attr('src', newPath);
@@ -59,6 +59,7 @@ export class KombiComponent implements OnInit {
         queryElement.classList.remove('animate__fadeOut');
         queryElement.classList.remove('opacity_on');
         queryElement.classList.add('opacity_off');
+        if (newIndex != null) { this.angleNeddle = this.getAngle(newIndex - 1); }
       });
     }
   }
@@ -66,9 +67,7 @@ export class KombiComponent implements OnInit {
   nextStep(newIndex: number): void {
     if (this.currentImage !== newIndex && newIndex <= this.steps.length) {
       const newPath = this.getPath(newIndex);
-      this.animateWithFade(newPath);
-
-      this.angleNeddle = this.getAngle(newIndex - 1);
+      this.animateWithFade(newPath, newIndex);
 
       if (newIndex < this.steps.length){
         this.currentImage = newIndex;
