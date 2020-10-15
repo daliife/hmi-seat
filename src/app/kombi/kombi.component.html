@@ -22,6 +22,8 @@
         href="https://google.es"
         target="_blank"
         class="kombi-link"
+        data-toggle="modal"
+        data-target="#videoModal"
         [ngStyle]="{
           'pointer-events': !clickableLinks ? 'none' : 'auto',
           opacity: !clickableLinks ? '0.5' : '1',
@@ -62,7 +64,7 @@
     </div>
   </div>
   <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
-    <img src="assets/kombi/sphere.png" />
+    <img class="animate__animated animate__headShake animate__delay-3s" src="assets/kombi/sphere.png" />
     <img
       id="kombi-needle"
       src="assets/kombi/needle.png"
@@ -70,5 +72,32 @@
         transition: 300ms ease-in-out all; 
         transform: rotate({{ angleNeddle }}deg);"
     />
+  </div>
+</div>
+
+
+<!--testing-->
+<div
+  class="modal fade"
+  id="videoModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="videoModalTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe
+            class="embed-responsive-item"
+            src="https://player.vimeo.com/video/463454222"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
