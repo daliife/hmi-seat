@@ -1,8 +1,8 @@
-$ripple-color: #0bcff2;
+$ripple-color: #024c5f;
 .kombi-container {
   .button-test {
     margin: 1rem 2rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: white;
     font-family: SeatBcn-Bold;
     background-color: transparent;
@@ -18,9 +18,11 @@ $ripple-color: #0bcff2;
     height: 100%;
     .floating-img {
       height: 100%;
+      object-fit: contain;
+      width: 100%;
     }
   }
-  .kombi-section{
+  .kombi-section {
     position: fixed;
   }
   .kombi-background {
@@ -51,6 +53,7 @@ $ripple-color: #0bcff2;
       outline: none;
       transition: all 0.2s;
       text-decoration: none;
+      cursor: pointer;
       &:hover {
         transform: scale(1.05);
       }
@@ -66,7 +69,7 @@ $ripple-color: #0bcff2;
       text-align: center;
       border-radius: 50%;
       animation: ripple 2s linear infinite;
-      margin: 0px 20rem;
+      margin: 0px 19rem;
     }
     @keyframes ripple {
       0% {
@@ -88,8 +91,8 @@ $ripple-color: #0bcff2;
     display: flex;
     justify-content: center;
     bottom: 32%;
-    img{
-      width: 25rem;
+    img {
+      width: 32rem;
       position: absolute;
     }
   }
@@ -111,3 +114,90 @@ $ripple-color: #0bcff2;
   border: none;
   z-index: 10;
 }
+
+
+// ------------------
+.modal-dialog {
+  max-width: 80%;
+}
+.modal-content {
+  background-color: black;
+  border-radius: 15px;
+}
+#videoModal {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.close-section-button {
+  margin: 30px;
+}
+.add-inferior-space {
+  margin-bottom: 40px;
+}
+.relative-row {
+  position: relative;
+}
+#download-button {
+  left: 18%;
+  top: 30%;
+  position: inherit;
+}
+#email-button {
+  left: 50%;
+  top: 69%;
+  position: inherit;
+}
+#video-button {
+  left: 47%;
+  bottom: 4.5%;
+  position: inherit;
+}
+.title-download {
+  margin-bottom: 40px;
+  margin-top: 80px;
+}
+.download-button {
+  border-radius: 4px;
+  background-color: #ea5d1a;
+  margin-right: 40px;
+  color: #ffffff;
+}
+.contact-button {
+  border-radius: 4px;
+  border: solid 1px #ea5d1a;
+  color: #ea5d1a;
+}
+.text-buttons {
+  padding: 12px 35px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: 18px;
+  font-family: "SeatBcn-Regular";
+}
+.floating-buttons-selection {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: transparent;
+}
+.floating-button {
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.floating-button:hover {
+  transform: scale(1.15);
+}
+.image-button {
+  width: 100%;
+  height: auto;
+}
+.floating-effect {
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+}
+

@@ -43,6 +43,7 @@ $green-base-color: #9aae02;
   border: none;
   border-radius: 4px;
   transition: all 0.25s;
+  cursor: pointer;
   &:hover {
     color: #ea5d1b;
     background-color: #ffffff;
@@ -52,8 +53,8 @@ $green-base-color: #9aae02;
 .center-align {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 30%;
+  transform: translate(-30%, -50%);
 }
 
 // Font imports
