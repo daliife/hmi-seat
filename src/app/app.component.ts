@@ -38,7 +38,6 @@ export class AppComponent {
     if (!this.initialised && this.currentStep > 0){
       this.initialised = true;
     }
-    console.log('steps', this.currentStep, this.steps);
   }
 
   previousStep(): void {

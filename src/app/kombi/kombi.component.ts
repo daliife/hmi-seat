@@ -68,7 +68,6 @@ export class KombiComponent implements OnInit {
 
   onClickAdditional(): void {
     const res = 'assets/kombi/07.png';
-    console.log('000000');
     this.currentImage = 7;
     this.animateWithFade(res);
   }

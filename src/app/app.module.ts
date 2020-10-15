@@ -9,6 +9,7 @@ import { KombiComponent } from './kombi/kombi.component';
 import { FutureComponent } from './future/future.component';
 import { CarouselTimelineComponent } from './carousel-timeline/carousel-timeline.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChronologyComponent } from './chronology/chronology.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     KombiComponent,
     FutureComponent,
     CarouselTimelineComponent,
+    ChronologyComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],

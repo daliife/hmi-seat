@@ -53,15 +53,15 @@ export class CarouselTimelineComponent implements OnInit, AfterViewInit {
     return Math.round(second - first);
   }
 
-  ngAfterViewInit(): void {
-    this.screenWidth = window.innerWidth;
-  }
-
   ngOnInit(): void {
     this.items.map((i, index) => {
       i.id = index;
       i.marginLeft = 0;
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.screenWidth = window.innerWidth;
   }
 
   setCurrentPosition(position: number): void {
