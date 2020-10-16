@@ -20,7 +20,7 @@
     display: flex;
     top: 86%;
     position: absolute;
-    width: 10%;
+    width: 7vw;
   }
   .future-animation-line {
     position: absolute;
@@ -37,7 +37,7 @@
     background-color: #ea5d1b;
     cursor: pointer;
     transition: 1s all ease-in-out;
-    transform: translateX(144px);
+    transform: translateX(7vw);
 
     &:hover,
     &-active {
@@ -55,7 +55,7 @@
     font-size: 1rem;
     color: #ffffff;
     text-align: center;
-    transform: translateX(144px);
+    transform: translateX(6.5vw);
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;

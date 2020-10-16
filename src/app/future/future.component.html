@@ -6,24 +6,19 @@
     >
       <h1 class="future-title">It has just started!</h1>
       <h2 class="future-subtitle">
-        The future has not been written yet.<br />But we are not going to wait for it.
+        The future has not been written yet.<br />But we are not going to wait
+        for it.
       </h2>
-      <button
-        style="margin-left: 2rem"
-        (click)="onClickNext()"
-        class="seat-button"
-      >
+      <button (click)="onClickNext()" class="seat-button">
         Lets accelerate
       </button>
     </div>
   </div>
-  <div class="future-animation-step">
+  <div class="future-animation-step animate__animated animate__fast animate__fadeIn">
     <div class="container-button" (click)="onClickPrevious()">
       <!-- <button (click)="onClickPrevious()" class="seat-button-back"></button> -->
     </div>
-          <div class="future-animation-line">
-          </div>
-          <span class="future-animation-span">Back</span>
-
+    <div class="future-animation-line"></div>
+    <span class="future-animation-span">Back</span>
   </div>
 </div>
