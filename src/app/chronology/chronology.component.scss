@@ -59,12 +59,10 @@
     }
   }
 
-  
-
   &__container {
     position: absolute;
     left: 11%;
-    bottom: 48px;
+    bottom: 50%;
     height: 2px;
     width: 78%;
     background: #dfdfdf;
@@ -124,7 +122,7 @@
     position: absolute;
     z-index: 1;
     left: 11%;
-    top: 10px;
+    bottom: 50%;
     height: 2px;
     width: 100%;
     background-color: #ea5d1b;

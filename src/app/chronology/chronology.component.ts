@@ -154,6 +154,7 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
     );
 
     let result: number;
+    widthBetweenEvents = widthBetweenEvents - 1;
     result = (widthBetweenEvents / widthParent) * currentPos;
     ChronologyComponent.setTransformValue(
       this.fillingLine.nativeElement,

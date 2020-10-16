@@ -11,7 +11,9 @@
   class="dsc-carousel animate__animated animate__fast animate__fadeIn animate__delay-1s"
   [ngStyle]="{ 'min-height': finalHeight }"
 >
-  <div #stepsEvents class="dsc-carousel__steps">
+<div #stepsEvents class="dsc-carousel__steps">
+    <div class="dsc-carousel__container">
+    </div>
     <div
       #timelineEvents
       *ngFor="let item of items; let index = index"
