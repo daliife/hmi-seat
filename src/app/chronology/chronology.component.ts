@@ -9,6 +9,7 @@ import {
   ViewChild,
   ViewChildren,
   AfterViewInit,
+  HostListener,
 } from '@angular/core';
 import { ICarouselItem } from '../carousel-timeline/Icarousel-item.metadata';
 import { CAROUSEL_DATA_ITEMS } from '../model/carousel.const';
@@ -56,6 +57,27 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
 
   private static itemDiff(second: number, first: number): number {
     return Math.round(second - first);
+  }
+
+  @HostListener('mousewheel', ['$event'])
+  onScroll(event: WheelEvent): void {
+    let nextPos = this.currentPosition;
+    if (event.deltaY > 0 && nextPos < 7) {
+      nextPos++;
+      this.setCurrentPosition(nextPos);
+      if (nextPos >= 7) {
+        const queryElement = document.querySelector('.dsc-carousel');
+        queryElement.classList.add('animate__fadeOut');
+        queryElement.addEventListener('animationend', () => {
+          queryElement.classList.remove('animate__fadeOut');
+          this.clickNext.emit(true);
+        });
+      }
+    }
+    if (event.deltaY < 0 && nextPos > 0) {
+      nextPos--;
+      this.setCurrentPosition(nextPos);
+    }
   }
 
   ngOnInit(): void {
@@ -125,5 +147,4 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
       result
     );
   }
-
 }
