@@ -1,5 +1,5 @@
 <app-navbar-logo></app-navbar-logo>
-<!-- 
+
 <app-welcome
   *ngIf="steps[0]"
   [initialAnimation]="!initialised"
@@ -10,18 +10,18 @@
 <app-welcome-video
   *ngIf="steps[1]"
   (clickSkip)="nextStep()"
-></app-welcome-video> -->
+></app-welcome-video>
 
 <app-chronology
-  *ngIf="true"
+  *ngIf="steps[2]"
   [items]="carouselData"
   (clickNext)="nextStep()"
 ></app-chronology>
 
-<!-- <app-future
+<app-future
   *ngIf="steps[3]"
   (clickPrevious)="previousStep()"
   (clickNext)="nextStep()"
 ></app-future>
 
-<app-kombi *ngIf="steps[4]" (clickPrevious)="previousStep()"></app-kombi> -->
+<app-kombi *ngIf="steps[4]" (clickPrevious)="previousStep()"></app-kombi>
