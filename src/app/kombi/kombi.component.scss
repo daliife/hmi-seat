@@ -1,92 +1,135 @@
-$color: #0bcff2;
-.kombi-container{
-  .button-test{
-    margin: 1rem 2rem;
-    font-size: 2rem;
+$ripple-color: #024c5f;
+.kombi-container {
+  .kombi-steps-images{
+    .steps{
+      z-index: 5;
+      bottom: 1vw;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 20vw;
+      height: 20vw; 
+    }
+  }
+  .kombi-additional-button {
+    position: absolute;
+    bottom: 14rem;
+    right: 34%;
+    img {
+      width: 5rem;
+      height: 5rem;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  .button-test {
+    font-size: 2vw;
+    position: absolute;
     color: white;
-    font-family: SeatBcn-Bold;
+    font-family: SeatBcn-Regular;
     background-color: transparent;
     border: none;
     outline: none;
-    &:active, &:enabled{
-      background-color: orangered;
+  }
+  .kombi-background {
+    background-color: black;
+    height: 100%;
+    .floating-img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
     }
   }
-  .kombi-background{
-    background-color: black;
-  }
-  .kombi-section, .kombi-background{
-    position: fixed;
+  .kombi-background {
+    position: absolute;
     max-width: 100%;
     max-height: 100%;
+    width: 100%;
   }
-  .kombi-section{
+  .kombi-section {
+    position: fixed;
+    opacity: .5!important;
     bottom: 0;
+    width: 100%;
+    img {
+      width: 100%;
+      bottom: 0%;
+      position: absolute;
+    }
   }
-  .kombi-interactives{
+  .kombi-interactives {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: absolute;
     width: 100%;
-    bottom: 15%;
-    .kombi-link{
-      width: 10rem;
-      height: 10rem;
+    bottom: 2.5%;
+    .kombi-link {
       border-radius: 50%;
-      background-color: black;
-      color: white;
-      font-family: SeatBcn-Bold;
-      font-size: 1.75rem;
+      background-color: transparent;
       border: none;
       outline: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all .2s;
+      transition: all 0.2s;
       text-decoration: none;
-      border: 2px solid white;
-      &:hover{
-        transform: scale(1.1);
-        background-color: orangered;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+      img {
+        width: 10vw;
+        height: 10vw;
       }
     }
-    .ripple-container{
-      width: 10rem;
-      height: 10rem;
+    .ripple-container {
+      width: 10vw;
+      height: 10vw;
       display: flex;
       text-align: center;
       border-radius: 50%;
       animation: ripple 2s linear infinite;
+      margin: 2% 16%;
     }
     @keyframes ripple {
       0% {
-        box-shadow: 0 0 0 0 rgba($color, 0.3),
-                    0 0 0 .5em rgba($color, 0.3),
-                    0 0 0 1.5em rgba($color, 0.3),
-                    0 0 0 2.5em rgba($color, 0.3);
+        box-shadow: 0 0 0 0 rgba($ripple-color, 0.3),
+          0 0 0 0.5em rgba($ripple-color, 0.3),
+          0 0 0 1.5em rgba($ripple-color, 0.3),
+          0 0 0 2.5em rgba($ripple-color, 0.3);
       }
       100% {
-        box-shadow: 0 0 0 .5em rgba($color, 0.3),
-                    0 0 0 1.5em rgba($color, 0.3),
-                    0 0 0 2.5em rgba($color, 0.3),
-                    0 0 0 4em rgba($color, 0);
+        box-shadow: 0 0 0 0.5em rgba($ripple-color, 0.3),
+          0 0 0 1.5em rgba($ripple-color, 0.3),
+          0 0 0 2.5em rgba($ripple-color, 0.3), 0 0 0 4em rgba($ripple-color, 0);
       }
     }
-    .kombi-button {
-      font-size: 1.5rem;
-      color: white;
-      padding: 1rem 2.5rem;
-      margin-top: 3rem;
-      background-color: orange;
-      font-family: SeatBcn-Black;
-      outline: none;
-      border: none;
+  }
+  .kombi-steps {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 19vw;
+    img {
+      width: 33vw;
+      position: absolute;
     }
   }
 }
-.opacity_off{
+.opacity_off {
   opacity: 0;
 }
-.opacity_on{
+.opacity_on {
   opacity: 1;
+}
+.kombi-button {
+  font-size: 1.5rem;
+  color: white;
+  padding: 1rem 2.5rem;
+  margin-top: 3rem;
+  background-color: orange;
+  font-family: SeatBcn-Black;
+  outline: none;
+  border: none;
+  z-index: 10;
 }

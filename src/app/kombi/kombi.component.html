@@ -1,21 +1,83 @@
-<div class="kombi-container animate__animated animate__faster animate__fadeIn">
-  <div class="kombi-background">
-    <img (load)="fadeIn();" class="floating-img animate__animated" src="https://via.placeholder.com/1920x1080/00FFFF">
+<div class="kombi-container">
+  <div class="kombi-background animate__animated animate__fadeIn animate__delay-2s">
+    <img
+      (load)="fadeIn()"
+      class="floating-img animate__animated animate__faster"
+      [src]="imagePath"
+    />
   </div>
   <div class="kombi-section">
-    <img src="https://via.placeholder.com/1920x540/000000">
+    <img
+      src="assets/kombi/kombi.png"
+      class="animate__animated animate__fadeInUp"
+    />
   </div>
-  <div class="kombi-interactives">
-    <button class="kombi-button" (click)="onClickPrevious()">Go Back</button>
+  <div class="kombi-interactives animate__animated animate__fadeIn animate__delay-1s">
     <div class="ripple-container">
-      <a href="https://google.es" target="_blank" class="kombi-link">Download</a>
-    </div>
-    <div>
-      <button *ngFor="let step of steps;let i = index;" [disabled]="!step" (click)="nextStep(i+1)"
-        class="button-test">{{(i+1) * 10}}km</button>
+      <a
+        href="https://player.vimeo.com/external/468537180.hd.mp4?s=2e583bf10068e992b09e0f99bd00e797d05a218d&profile_id=175"
+        target="_blank"
+        class="kombi-link"
+        [ngStyle]="{
+          'pointer-events': !clickableLinks ? 'none' : 'auto',
+          opacity: !clickableLinks ? '0.5' : '1',
+          filter: !clickableLinks ? 'grayscale(1)' : 'none'
+        }"
+      >
+        <img src="assets/kombi/video.png" />
+      </a>
     </div>
     <div class="ripple-container">
-      <a href="https://google.es" target="_blank" class="kombi-link">Play</a>
+      <a
+        href="https://everisgroup.sharepoint.com/:f:/s/SEATHMI-Octubre2020/EvyklyjFzAFIpDox4a2yLUQBY-ckquSzVdId8xgcsko4AQ?e=cJ2qQe"
+        download
+        target="_blank"
+        class="kombi-link"
+        [ngStyle]="{
+          'pointer-events': !clickableLinks ? 'none' : 'auto',
+          opacity: !clickableLinks ? '0.5' : '1',
+          filter: !clickableLinks ? 'grayscale(1)' : 'none'
+        }"
+      >
+        <img src="assets/kombi/download.png" />
+      </a>
+    </div>
+  </div>
+  <!-- <div
+    class="kombi-additional-button animate__animated animate__fadeIn animate__delay-1s"
+  >
+    <img (click)="onClickAdditional()" src="assets/kombi/more.png" />
+  </div> -->
+  <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
+    <img
+      class="animate__animated animate__bounce animate__delay-3s"
+      src="assets/kombi/sphere_without.png"
+    />
+    <img
+      id="kombi-needle"
+      src="assets/kombi/needle.png"
+      style="
+        transition: 300ms ease-in-out all; 
+        transform: rotate({{ angleNeddle }}deg);"
+    />
+  </div>
+  <div class="kombi-steps-images animate__animated animate__fadeIn animate__delay-1s">
+    <div
+      class="steps"
+    >
+      <button
+        *ngFor="let step of steps; let i = index"
+        [disabled]="!steps"
+        (click)="nextStep(i + 1)"
+        class="button-test"
+        [ngStyle]="{
+          color: highlight[i] ? '#ea5d1b': 'white',
+          left: positions[i].x + '%',
+          bottom: positions[i].y + '%'
+        }"
+      >
+        0{{ i + 1 }}
+      </button>
     </div>
   </div>
 </div>

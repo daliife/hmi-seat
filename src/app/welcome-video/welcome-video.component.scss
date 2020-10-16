@@ -1,32 +1,215 @@
-.welcome-video-container{
+.welcome-video-container {
   background-color: black;
   z-index: 0;
   width: 100%;
   height: 100%;
   position: absolute;
-  .welcome-video{
-    position: fixed;
+  .welcome-video {
     right: 0;
-    bottom: 0;
+    top: 0;
     min-width: 100%;
-    min-height: 100%;
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
   }
-  .skip-button{
+  .skip-button {
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 3rem 4rem;
-    font-size: 3rem;
-    color: white;
+    margin-right: 10rem;
+    margin-bottom: 3.75rem;
+    color: #ea5d1b;
     background-color: transparent;
     border: none;
-    font-family: SeatBcn-Bold;
+    font-family: "SeatBcn-Bold" !important;
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 2rem;
     z-index: 25;
     outline: none;
-    &:hover{
-      color:orangered;
-      text-decoration: underline;
+    &:hover {
+      color: #ea5d1b;
       cursor: pointer;
+    }
+  }
+}
+
+// ARROW CODEPEN
+// https://codepen.io/shawnlooi/pen/eeXmrQ
+
+$black: #ea5d1b;
+$white: #ea5d1b;
+$gray: #ea5d1b;
+$text-arrow-space: 16px;
+$shaft-width: 2px;
+$newshaft-width: 64px;
+$shaft-thickness: 2px;
+$arrow-head-width: 8px;
+$arrow-head-thickness: $shaft-thickness;
+.the-arrow {
+  width: $shaft-width;
+  transition: all 0.2s;
+
+  &.-left {
+    position: absolute;
+    top: 60%;
+    left: 0;
+
+    > .shaft {
+      width: 0;
+      background-color: $black;
+
+      &:before,
+      &:after {
+        width: 0;
+        background-color: $black;
+      }
+
+      &:before {
+        transform: rotate(0);
+      }
+
+      &:after {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &.-right {
+    top: 3px;
+
+    > .shaft {
+      width: $shaft-width;
+      transition-delay: 0.2s;
+
+      &:before,
+      &:after {
+        width: $arrow-head-width;
+        transition-delay: 0.3s;
+        transition: all 0.5s;
+      }
+
+      &:before {
+        transform: rotate(40deg);
+      }
+
+      &:after {
+        transform: rotate(-40deg);
+      }
+    }
+  }
+
+  > .shaft {
+    background-color: $black;
+    display: block;
+    height: $shaft-thickness;
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+
+    &:before,
+    &:after {
+      background-color: $black;
+      content: "";
+      display: block;
+      height: $arrow-head-thickness;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.2s;
+      transition-delay: 0;
+    }
+
+    &:before {
+      transform-origin: top right;
+    }
+
+    &:after {
+      transform-origin: bottom right;
+    }
+  }
+}
+
+// Animated Arrow Button
+
+.animated-arrow {
+  display: inline-block;
+  color: $black;
+  //font-size: 1.25em;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $gray;
+
+    > .the-arrow.-left {
+      > .shaft {
+        width: $newshaft-width;
+        transition-delay: 0.1s;
+        background-color: $gray;
+
+        &:before,
+        &:after {
+          width: $arrow-head-width;
+          transition-delay: 0.1s;
+          background-color: $gray;
+        }
+
+        &:before {
+          transform: rotate(40deg);
+        }
+
+        &:after {
+          transform: rotate(-40deg);
+        }
+      }
+    }
+
+    > .main {
+      transform: translateX($shaft-width + $text-arrow-space);
+      transform: translateX($newshaft-width + $text-arrow-space);
+
+      > .the-arrow.-right {
+        > .shaft {
+          width: 0;
+          transform: translateX(200%);
+          transition-delay: 0;
+
+          &:before,
+          &:after {
+            width: 0;
+            transition-delay: 0;
+            transition: all 0.1s;
+          }
+
+          &:before {
+            transform: rotate(0);
+          }
+
+          &:after {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+  > .main {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+
+    > .text {
+      margin: 0 $text-arrow-space 0 0;
+      line-height: 1;
+      font-family: "SeatBcn-Bold";
+      font-size: 1.375rem;
+      font-weight: 700;
+    }
+    > .the-arrow {
+      position: relative;
     }
   }
 }

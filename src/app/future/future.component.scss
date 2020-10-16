@@ -1,0 +1,70 @@
+.future-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  overflow: hidden;
+  .future-title {
+    font-size: 4.25rem;
+    font-family: SeatBcn-Black;
+    font-weight: bold;
+  }
+  .future-subtitle {
+    font-size: 2.125rem;
+    margin-top: 2.5rem;
+    font-family: SeatBcn-Regular;
+    font-weight: 400;
+    line-height: 3.5rem;
+  }
+  .future-animation-step {
+    display: flex;
+    top: 86%;
+    position: absolute;
+    width: 7vw;
+  }
+  .future-animation-line {
+    position: absolute;
+    bottom: 50%;
+    height: 2px;
+    width: 100%;
+    background: #ea5d1b;
+  }
+  .container-button {
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    border-color: #ffffff;
+    background-color: #ea5d1b;
+    cursor: pointer;
+    transition: 1s all ease-in-out;
+    transform: translateX(7vw);
+
+    &:hover,
+    &-active {
+      background-color: #ea5d1b;
+      border-color: #ea5d1b;
+    }
+    &-older-event {
+      border-color: #ea5d1b;
+      background-color: #ea5d1b;
+    }
+  }
+  .future-animation-span {
+    position: absolute;
+    bottom: -2rem;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    transform: translateX(6.5vw);
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+}

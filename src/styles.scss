@@ -7,7 +7,7 @@
   font-family: "SeatBcn-Regular", Helvetica, Arial, sans-serif;
 }
 
-body{
+body {
   background-color: black;
 }
 
@@ -17,6 +17,50 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+// General styles
+
+$orange-base-color: #ea5d1b;
+$white-base-color: #ffffff;
+$black-base-color: #000000;
+$green-base-color: #9aae02;
+
+.opacity_off {
+  opacity: 0;
+}
+.opacity_on {
+  opacity: 1;
+}
+
+.seat-button {
+  font-size: 1.375rem;
+  color: #ffffff;
+  padding: 1rem 1.5625rem;
+  margin-top: 3rem;
+  background-color: $orange-base-color;
+  font-family: SeatBcn-Bold;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.25s;
+  cursor: pointer;
+  &:hover {
+    background-color: #F08D5F;
+  }
+}
+
+.center-align {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0 5.875rem 0 9.3125rem;
 }
 
 // Font imports

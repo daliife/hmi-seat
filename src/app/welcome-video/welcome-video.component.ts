@@ -10,21 +10,28 @@ export class WelcomeVideoComponent implements OnInit {
   @Input() showVideo = false;
   @Output() clickSkip = new EventEmitter<boolean>();
 
-  skip = false;
+  skipLabel = 'Skip the video ';
 
   constructor() { }
 
   ngOnInit(): void { }
 
+  onVideoEnded(): void{
+    this.skipLabel = 'Start';
+  }
+
   onClickSkip(): void {
-    this.skip = true;
-    this.delay(800);
+    const queryElement = document.querySelector('.welcome-video-container');
+    queryElement.classList.add('animate__fadeOut');
+    queryElement.addEventListener('animationend', () => {
+      queryElement.classList.remove('animate__fadeOut');
+      this.clickSkip.emit(false);
+    });
   }
 
   async delay(ms: number): Promise<any> {
     await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => {
       this.clickSkip.emit(false);
-      this.skip = false;
     });
   }
 

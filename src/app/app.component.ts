@@ -8,11 +8,9 @@ import { CAROUSEL_DATA_ITEMS } from './model/carousel.const';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
 
- public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
-
-
-  steps: boolean[] = [true, false, false];
+  steps: boolean[] = [true, false, false, false, false];
   currentStep = 0;
   showVideo = false;
 
@@ -21,7 +19,7 @@ export class AppComponent {
   initialised2 = false;
 
   resetSteps(): void {
-    this.steps = [false, false, false];
+    this.steps = [false, false, false, false, false];
   }
 
   nextStep(): void {
