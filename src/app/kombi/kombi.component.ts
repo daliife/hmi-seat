@@ -1,6 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import * as $ from 'jquery';
-
 @Component({
   selector: 'app-kombi',
   templateUrl: './kombi.component.html',
@@ -70,8 +68,7 @@ export class KombiComponent implements OnInit {
   }
 
   onClickAdditional(): void {
-    const res = 'assets/kombi/07.png';
-    this.currentImage = 7;
+    const res = 'assets/kombi/08.png';
     this.animateWithFade(res);
   }
 
@@ -100,20 +97,25 @@ export class KombiComponent implements OnInit {
   }
 
   nextStep(newIndex: number): void {
-    if (this.currentImage !== newIndex && newIndex <= this.steps.length) {
+    console.log(newIndex, this.currentImage);
+    if (this.currentImage !== newIndex && newIndex <= this.steps.length && this.steps[newIndex - 1] ) {
       const newPath = this.getPath(newIndex);
       this.animateWithFade(newPath, newIndex);
 
       if (newIndex <= this.steps.length) {
-        this.highlight[this.currentImage] = true; 
+        this.highlight[this.currentImage] = true;
       }
       if (newIndex < this.steps.length) {
         this.currentImage = newIndex;
         this.steps[this.currentImage] = true;
+        console.log(this.steps);
       }
-      // Enable action links when reached to slide 6
+      // Enable action links when reached to slide 6 + timeout to change to instructions
       if (newIndex === this.steps.length) {
         this.clickableLinks = true;
+        setTimeout(() => {
+          this.onClickAdditional();
+        }, 10000);
       }
     }
   }
