@@ -63,12 +63,16 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
 
   @HostListener('mousewheel', ['$event'])
   onScroll(event: WheelEvent): void {
-    if(this.scrollEnabled){
-      this.scrollEnabled = false;
+    const scrollThreshold = 30;
+    if (this.scrollEnabled){
       let nextPos = this.currentPosition;
-      if (event.deltaY > 0 && nextPos < 7) {
+      if (event.deltaY > scrollThreshold && nextPos < 7) {
+        this.scrollEnabled = false;
         nextPos++;
         this.setCurrentPosition(nextPos);
+        setTimeout(() => {
+          this.scrollEnabled = true;
+        }, 1000);
         if (nextPos >= 7) {
           const queryElement = document.querySelector('.dsc-carousel');
           queryElement.classList.add('animate__fadeOut');
@@ -78,13 +82,15 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
           });
         }
       }
-      if (event.deltaY < 0 && nextPos > 0) {
+      if (event.deltaY < -scrollThreshold && nextPos > 0) {
+        this.scrollEnabled = false;
+        console.log(event);
         nextPos--;
         this.setCurrentPosition(nextPos);
+        setTimeout(() => {
+          this.scrollEnabled = true;
+        }, 1000);
       }
-      setTimeout(() => {
-        this.scrollEnabled = true;
-      }, 1000);
     }
   }
 
