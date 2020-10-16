@@ -1,7 +1,5 @@
 <div class="kombi-container">
-  <div
-    class="kombi-background animate__animated animate__fadeIn animate__delay-2s"
-  >
+  <div class="kombi-background animate__animated animate__fadeIn animate__delay-2s">
     <img
       (load)="fadeIn()"
       class="floating-img animate__animated animate__faster"
@@ -14,9 +12,7 @@
       class="animate__animated animate__fadeInUp"
     />
   </div>
-  <div
-    class="kombi-interactives animate__animated animate__fadeIn animate__delay-1s"
-  >
+  <div class="kombi-interactives animate__animated animate__fadeIn animate__delay-1s">
     <div class="ripple-container">
       <a
         href="https://player.vimeo.com/external/468537180.hd.mp4?s=2e583bf10068e992b09e0f99bd00e797d05a218d&profile_id=175"
@@ -65,22 +61,9 @@
         transform: rotate({{ angleNeddle }}deg);"
     />
   </div>
-  <div
-    class="kombi-steps-images animate__animated animate__fadeIn animate__delay-1s"
-  >
+  <div class="kombi-steps-images animate__animated animate__fadeIn animate__delay-1s">
     <div
       class="steps"
-      style="
-        z-index: 55;
-        bottom: 0;
-        justify-content: center;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 0);
-        width: 20rem;
-        height: 20rem;
-        margin-bottom: 0.2rem;
-      "
     >
       <button
         *ngFor="let step of steps; let i = index"

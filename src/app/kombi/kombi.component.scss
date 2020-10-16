@@ -1,5 +1,18 @@
 $ripple-color: #024c5f;
 .kombi-container {
+  .kombi-steps-images{
+    .steps{
+      z-index: 5;
+      bottom: 6%;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 20rem;
+      height: 20rem;
+      margin-bottom: 0.2rem;  
+    }
+  }
   .kombi-additional-button {
     position: absolute;
     bottom: 14rem;
@@ -76,7 +89,7 @@ $ripple-color: #024c5f;
       text-align: center;
       border-radius: 50%;
       animation: ripple 2s linear infinite;
-      margin: 0px 19rem;
+      margin: 3rem 22rem;
     }
     @keyframes ripple {
       0% {
@@ -97,7 +110,7 @@ $ripple-color: #024c5f;
     width: 100%;
     display: flex;
     justify-content: center;
-    bottom: 32%;
+    bottom: 36%;
     img {
       width: 32rem;
       position: absolute;
@@ -121,6 +134,7 @@ $ripple-color: #024c5f;
   border: none;
   z-index: 10;
 }
+
 
 // ------------------
 .modal-dialog {
