@@ -35,6 +35,8 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
   public currentPosition = 0;
   public screenWidth: any;
 
+  scrollEnabled = true;
+
   imagePath = 'assets/chronology/50s.png';
 
   currentImage = 0;
@@ -61,22 +63,28 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
 
   @HostListener('mousewheel', ['$event'])
   onScroll(event: WheelEvent): void {
-    let nextPos = this.currentPosition;
-    if (event.deltaY > 0 && nextPos < 7) {
-      nextPos++;
-      this.setCurrentPosition(nextPos);
-      if (nextPos >= 7) {
-        const queryElement = document.querySelector('.dsc-carousel');
-        queryElement.classList.add('animate__fadeOut');
-        queryElement.addEventListener('animationend', () => {
-          queryElement.classList.remove('animate__fadeOut');
-          this.clickNext.emit(true);
-        });
+    if(this.scrollEnabled){
+      this.scrollEnabled = false;
+      let nextPos = this.currentPosition;
+      if (event.deltaY > 0 && nextPos < 7) {
+        nextPos++;
+        this.setCurrentPosition(nextPos);
+        if (nextPos >= 7) {
+          const queryElement = document.querySelector('.dsc-carousel');
+          queryElement.classList.add('animate__fadeOut');
+          queryElement.addEventListener('animationend', () => {
+            queryElement.classList.remove('animate__fadeOut');
+            this.clickNext.emit(true);
+          });
+        }
       }
-    }
-    if (event.deltaY < 0 && nextPos > 0) {
-      nextPos--;
-      this.setCurrentPosition(nextPos);
+      if (event.deltaY < 0 && nextPos > 0) {
+        nextPos--;
+        this.setCurrentPosition(nextPos);
+      }
+      setTimeout(() => {
+        this.scrollEnabled = true;
+      }, 1000);
     }
   }
 
