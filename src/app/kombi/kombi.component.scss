@@ -3,13 +3,13 @@ $ripple-color: #024c5f;
   .kombi-steps-images{
     .steps{
       z-index: 5;
-      bottom: 6%;
+      bottom: 1vw;
       justify-content: center;
       position: absolute;
       left: 50%;
       transform: translate(-50%, 0);
-      width: 20rem;
-      height: 20rem; 
+      width: 20vw;
+      height: 20vw; 
     }
   }
   .kombi-additional-button {
@@ -25,7 +25,7 @@ $ripple-color: #024c5f;
     }
   }
   .button-test {
-    font-size: 2rem;
+    font-size: 2vw;
     position: absolute;
     color: white;
     font-family: SeatBcn-Regular;
@@ -64,7 +64,7 @@ $ripple-color: #024c5f;
     justify-content: space-between;
     position: absolute;
     width: 100%;
-    bottom: 6.5%;
+    bottom: 2.5%;
     .kombi-link {
       border-radius: 50%;
       background-color: transparent;
@@ -77,18 +77,18 @@ $ripple-color: #024c5f;
         transform: scale(1.05);
       }
       img {
-        width: 10rem;
-        height: 10rem;
+        width: 10vw;
+        height: 10vw;
       }
     }
     .ripple-container {
-      width: 10rem;
-      height: 10rem;
+      width: 10vw;
+      height: 10vw;
       display: flex;
       text-align: center;
       border-radius: 50%;
       animation: ripple 2s linear infinite;
-      margin: 3rem 22rem;
+      margin: 2% 16%;
     }
     @keyframes ripple {
       0% {
@@ -109,9 +109,9 @@ $ripple-color: #024c5f;
     width: 100%;
     display: flex;
     justify-content: center;
-    bottom: 22rem;
+    bottom: 19vw;
     img {
-      width: 33rem;
+      width: 33vw;
       position: absolute;
     }
   }
@@ -132,90 +132,4 @@ $ripple-color: #024c5f;
   outline: none;
   border: none;
   z-index: 10;
-}
-
-
-// ------------------
-.modal-dialog {
-  max-width: 80%;
-}
-.modal-content {
-  background-color: black;
-  border-radius: 15px;
-}
-#videoModal {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-.close-section-button {
-  margin: 30px;
-}
-.add-inferior-space {
-  margin-bottom: 40px;
-}
-.relative-row {
-  position: relative;
-}
-#download-button {
-  left: 18%;
-  top: 30%;
-  position: inherit;
-}
-#email-button {
-  left: 50%;
-  top: 69%;
-  position: inherit;
-}
-#video-button {
-  left: 47%;
-  bottom: 4.5%;
-  position: inherit;
-}
-.title-download {
-  margin-bottom: 40px;
-  margin-top: 80px;
-}
-.download-button {
-  border-radius: 4px;
-  background-color: #ea5d1a;
-  margin-right: 40px;
-  color: #ffffff;
-}
-.contact-button {
-  border-radius: 4px;
-  border: solid 1px #ea5d1a;
-  color: #ea5d1a;
-}
-.text-buttons {
-  padding: 12px 35px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  font-size: 18px;
-  font-family: "SeatBcn-Regular";
-}
-.floating-buttons-selection {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  background-color: transparent;
-}
-.floating-button {
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: all 0.2s ease-in-out;
-}
-.floating-button:hover {
-  transform: scale(1.15);
-}
-.image-button {
-  width: 100%;
-  height: auto;
-}
-.floating-effect {
-  transform: translatey(0px);
-  animation: float 3s ease-in-out infinite;
 }
