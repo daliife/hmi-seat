@@ -82,9 +82,8 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
       this.imagePath = newPath;
     });
   }
-  
+
   fadeIn(): void {
-    console.log('loaded');
     const queryElement = document.querySelector('.floating-img');
     queryElement.classList.remove('opacity_off');
     queryElement.classList.add('opacity_on');

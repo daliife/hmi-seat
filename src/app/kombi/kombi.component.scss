@@ -20,10 +20,6 @@ $ripple-color: #024c5f;
     background-color: transparent;
     border: none;
     outline: none;
-    &:active,
-    &:enabled {
-      color: orangered;
-    }
   }
   .kombi-background {
     background-color: black;

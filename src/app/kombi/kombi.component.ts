@@ -9,6 +9,7 @@ import * as $ from 'jquery';
 export class KombiComponent implements OnInit {
   @Output() clickPrevious = new EventEmitter<boolean>();
 
+  imagePath = 'assets/kombi/00.png';
   positions = [
     {
       x: -2,
@@ -37,6 +38,7 @@ export class KombiComponent implements OnInit {
   ];
 
   steps: boolean[];
+  highlight: boolean[];
   currentImage = 0;
   flag = false;
   clickableLinks = false;
@@ -50,6 +52,7 @@ export class KombiComponent implements OnInit {
 
   resetSteps(): void {
     this.steps = [true, false, false, false, false, false];
+    this.highlight = [false, false, false, false, false, false];
     this.currentImage = 0;
     this.angleNeddle = this.getAngle(-1);
   }
@@ -74,23 +77,26 @@ export class KombiComponent implements OnInit {
 
   animateWithFade(newPath: string, newIndex?: number): void {
     const queryElement = document.querySelector('.floating-img');
-    if (!this.flag) {
-      $('.floating-img').attr('src', newPath);
-      queryElement.classList.add('animate__fadeIn');
-      this.flag = true;
-    } else {
-      queryElement.classList.remove('animate__fadeIn');
-      queryElement.classList.add('animate__fadeOut');
-      queryElement.addEventListener('animationend', () => {
-        $('.floating-img').attr('src', newPath);
-        queryElement.classList.remove('animate__fadeOut');
-        queryElement.classList.remove('opacity_on');
-        queryElement.classList.add('opacity_off');
-        if (newIndex != null) {
-          this.angleNeddle = this.getAngle(newIndex - 1);
-        }
-      });
+    queryElement.classList?.remove('animate__fadeIn');
+    queryElement.classList?.remove('animate__fadeOut');
+    queryElement.classList?.remove('opacity_on');
+
+    queryElement.classList.add('animate__fadeOut');
+    queryElement.addEventListener('animationend', () => {
+      queryElement.classList.remove('animate__fadeOut');
+      queryElement.classList.add('opacity_off');
+      this.imagePath = newPath;
+    });
+    if (newIndex != null) {
+      this.angleNeddle = this.getAngle(newIndex - 1);
     }
+  }
+
+  fadeIn(): void {
+    const queryElement = document.querySelector('.floating-img');
+    queryElement.classList.remove('opacity_off');
+    queryElement.classList.add('opacity_on');
+    queryElement.classList.add('animate__fadeIn');
   }
 
   nextStep(newIndex: number): void {
@@ -98,6 +104,9 @@ export class KombiComponent implements OnInit {
       const newPath = this.getPath(newIndex);
       this.animateWithFade(newPath, newIndex);
 
+      if (newIndex <= this.steps.length) {
+        this.highlight[this.currentImage] = true; 
+      }
       if (newIndex < this.steps.length) {
         this.currentImage = newIndex;
         this.steps[this.currentImage] = true;
@@ -106,15 +115,6 @@ export class KombiComponent implements OnInit {
       if (newIndex === this.steps.length) {
         this.clickableLinks = true;
       }
-    }
-  }
-
-  fadeIn(): void {
-    if (this.flag) {
-      const element = document.querySelector('.floating-img');
-      element.classList.remove('opacity_off');
-      element.classList.add('opacity_on');
-      element.classList.add('animate__fadeIn');
     }
   }
 

@@ -5,7 +5,7 @@
     <img
       (load)="fadeIn()"
       class="floating-img animate__animated animate__faster"
-      src="assets/kombi/00.png"
+      [src]="imagePath"
     />
   </div>
   <div class="kombi-section">
@@ -19,7 +19,7 @@
   >
     <div class="ripple-container">
       <a
-        href="https://vod-progressive.akamaized.net/exp=1602787711~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3707%2F18%2F468537180%2F2082335416.mp4~hmac=bcafe1a157c97899d5db595743487f7cb2817df54e8c02fc46077fb528263c3a/vimeo-prod-skyfire-std-us/01/3707/18/468537180/2082335416.mp4?filename=SEAT+HMI_Future+%5Bdraft%5D.mp4"
+        href="https://player.vimeo.com/external/468537180.hd.mp4?s=2e583bf10068e992b09e0f99bd00e797d05a218d&profile_id=175"
         target="_blank"
         class="kombi-link"
         [ngStyle]="{
@@ -79,15 +79,16 @@
         transform: translate(-50%, 0);
         width: 20rem;
         height: 20rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.2rem;
       "
     >
       <button
         *ngFor="let step of steps; let i = index"
-        [disabled]="!step"
+        [disabled]="!steps"
         (click)="nextStep(i + 1)"
         class="button-test"
         [ngStyle]="{
+          color: highlight[i] ? '#ea5d1b': 'white',
           left: positions[i].x + '%',
           bottom: positions[i].y + '%'
         }"
