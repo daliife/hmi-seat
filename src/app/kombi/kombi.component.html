@@ -43,11 +43,6 @@
       </a>
     </div>
   </div>
-  <!-- <div
-    class="kombi-additional-button animate__animated animate__fadeIn animate__delay-1s"
-  >
-    <img (click)="onClickAdditional()" src="assets/kombi/more.png" />
-  </div> -->
   <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
     <img
       class="animate__animated animate__bounce animate__delay-3s"
@@ -69,7 +64,7 @@
         *ngFor="let step of steps; let i = index"
         [disabled]="!steps"
         (click)="nextStep(i + 1)"
-        class="button-test"
+        class="kombi-speed-buttons"
         [ngStyle]="{
           color: highlight[i] ? '#ea5d1b': 'white',
           left: positions[i].x + '%',
