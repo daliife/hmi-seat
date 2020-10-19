@@ -68,7 +68,8 @@
         [ngStyle]="{
           color: highlight[i] ? '#ea5d1b': 'white',
           left: positions[i].x + '%',
-          bottom: positions[i].y + '%'
+          bottom: positions[i].y + '%',
+          cursor: !step ? 'auto' : 'pointer'
         }"
       >
         0{{ i + 1 }}
