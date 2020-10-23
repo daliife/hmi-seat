@@ -1,39 +1,24 @@
 <div class="chronology-container">
   <div class="chronology-background">
-    <img
-      (load)="fadeIn()"
-      class="floating-img animate__animated animate__faster animate__fadeIn"
-      [src]="imagePath"
-    />
+    <img (load)="fadeIn()" class="floating-img animate__animated animate__faster animate__fadeIn" [src]="imagePath" />
   </div>
 </div>
-<div
-  class="dsc-carousel animate__animated animate__fast animate__fadeIn animate__delay-1s"
-  [ngStyle]="{ 'min-height': finalHeight }"
->
-<div #stepsEvents class="dsc-carousel__steps">
+<div class="dsc-carousel animate__animated animate__fast animate__fadeIn animate__delay-1s"
+  [ngStyle]="{ 'min-height': finalHeight }">
+  <div #stepsEvents class="dsc-carousel__steps">
     <div class="dsc-carousel__container">
     </div>
-    <div
-      #timelineEvents
-      *ngFor="let item of items; let index = index"
-      (click)="setCurrentPosition(item.id)"
-      class="dsc-carousel__steps-step 
+    <div #timelineEvents *ngFor="let item of items; let index = index" (click)="setCurrentPosition(item.id)" class="dsc-carousel__steps-step 
                           dsc-carousel__steps-step-{{
         currentPosition === item.id
           ? 'active'
           : index < currentPosition
           ? 'older-event'
           : ''
-      }}"
-    >
+      }}">
       <span>{{ item.title }}</span>
     </div>
 
-    <span
-      class="dsc-carousel__filling-line"
-      aria-hidden="true"
-      #fillingLine
-    ></span>
+    <span class="dsc-carousel__filling-line" aria-hidden="true" #fillingLine></span>
   </div>
 </div>

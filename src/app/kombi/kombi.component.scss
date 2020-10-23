@@ -1,7 +1,7 @@
 $ripple-color: #024c5f;
 .kombi-container {
-  .kombi-steps-images{
-    .steps{
+  .kombi-steps-images {
+    .steps {
       z-index: 5;
       bottom: 1vw;
       justify-content: center;
@@ -9,7 +9,7 @@ $ripple-color: #024c5f;
       left: 50%;
       transform: translate(-50%, 0);
       width: 20vw;
-      height: 20vw; 
+      height: 20vw;
     }
   }
   .kombi-additional-button {
@@ -24,7 +24,7 @@ $ripple-color: #024c5f;
       }
     }
   }
-  .button-test {
+  .kombi-speed-buttons {
     font-size: 2vw;
     position: absolute;
     color: white;
@@ -50,7 +50,7 @@ $ripple-color: #024c5f;
   }
   .kombi-section {
     position: fixed;
-    opacity: .5!important;
+    opacity: 0.5 !important;
     bottom: 0;
     width: 100%;
     img {

@@ -29,7 +29,7 @@
     </div>
     <div class="ripple-container">
       <a
-        href="https://everisgroup.sharepoint.com/:f:/s/SEATHMI-Octubre2020/EvyklyjFzAFIpDox4a2yLUQBY-ckquSzVdId8xgcsko4AQ?e=cJ2qQe"
+        href="assets\Propuesta HMI_VRO.pdf"
         download
         target="_blank"
         class="kombi-link"
@@ -43,15 +43,10 @@
       </a>
     </div>
   </div>
-  <!-- <div
-    class="kombi-additional-button animate__animated animate__fadeIn animate__delay-1s"
-  >
-    <img (click)="onClickAdditional()" src="assets/kombi/more.png" />
-  </div> -->
   <div class="kombi-steps animate__animated animate__fadeIn animate__delay-1s">
     <img
       class="animate__animated animate__bounce animate__delay-3s"
-      src="assets/kombi/sphere_without.png"
+      src="assets/kombi/sphere.png"
     />
     <img
       id="kombi-needle"
@@ -69,11 +64,12 @@
         *ngFor="let step of steps; let i = index"
         [disabled]="!steps"
         (click)="nextStep(i + 1)"
-        class="button-test"
+        class="kombi-speed-buttons"
         [ngStyle]="{
           color: highlight[i] ? '#ea5d1b': 'white',
           left: positions[i].x + '%',
-          bottom: positions[i].y + '%'
+          bottom: positions[i].y + '%',
+          cursor: !step ? 'auto' : 'pointer'
         }"
       >
         0{{ i + 1 }}
