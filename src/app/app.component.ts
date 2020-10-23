@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ICarouselItem } from './carousel-timeline/Icarousel-item.metadata';
-import { CAROUSEL_DATA_ITEMS } from './model/carousel.const';
+import { ICarouselItem } from './chronology/carouselItem';
+import { CAROUSEL_DATA_ITEMS } from './chronology/chronology.data';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,6 @@ export class AppComponent {
   steps: boolean[] = [true, false, false, false, false];
   currentStep = 0;
   showVideo = false;
-
   initialised = false;
   initialised1 = false;
   initialised2 = false;
@@ -23,7 +22,7 @@ export class AppComponent {
   }
 
   nextStep(): void {
-    // Flag for first flow boolean
+    // Flag for second flow boolean
     if (this.initialised2 && this.currentStep < 2){
       this.initialised2 = false;
     }
@@ -57,7 +56,5 @@ export class AppComponent {
   toggleVideo(newValue: boolean): void {
     this.showVideo = newValue;
   }
-
-
 
 }

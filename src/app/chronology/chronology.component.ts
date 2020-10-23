@@ -11,8 +11,8 @@ import {
   AfterViewInit,
   HostListener,
 } from '@angular/core';
-import { ICarouselItem } from '../carousel-timeline/Icarousel-item.metadata';
-import { CAROUSEL_DATA_ITEMS } from '../model/carousel.const';
+import { CAROUSEL_DATA_ITEMS } from './chronology.data';
+import { ICarouselItem } from './carouselItem';
 
 @Component({
   selector: 'app-chronology',
@@ -63,6 +63,7 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
 
   @HostListener('mousewheel', ['$event'])
   onScroll(event: WheelEvent): void {
+    console.log('scroll', event);
     const scrollThreshold = 30;
     if (this.scrollEnabled){
       let nextPos = this.currentPosition;
@@ -73,18 +74,9 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
         setTimeout(() => {
           this.scrollEnabled = true;
         }, 1000);
-        if (nextPos >= 7) {
-          const queryElement = document.querySelector('.dsc-carousel');
-          queryElement.classList.add('animate__fadeOut');
-          queryElement.addEventListener('animationend', () => {
-            queryElement.classList.remove('animate__fadeOut');
-            this.clickNext.emit(true);
-          });
-        }
       }
       if (event.deltaY < -scrollThreshold && nextPos > 0) {
         this.scrollEnabled = false;
-        console.log(event);
         nextPos--;
         this.setCurrentPosition(nextPos);
         setTimeout(() => {
@@ -110,35 +102,41 @@ export class ChronologyComponent implements OnInit, AfterViewInit {
     queryElement.classList?.remove('animate__fadeIn');
     queryElement.classList?.remove('animate__fadeOut');
     queryElement.classList?.remove('opacity_on');
-
-    queryElement.classList.add('animate__fadeOut');
+    queryElement.classList?.add('animate__fadeOut');
     queryElement.addEventListener('animationend', () => {
-      queryElement.classList.remove('animate__fadeOut');
-      queryElement.classList.add('opacity_off');
+      queryElement.classList?.remove('animate__fadeOut');
+      queryElement.classList?.add('opacity_off');
       this.imagePath = newPath;
     });
   }
 
   fadeIn(): void {
     const queryElement = document.querySelector('.floating-img');
-    queryElement.classList.remove('opacity_off');
-    queryElement.classList.add('opacity_on');
-    queryElement.classList.add('animate__fadeIn');
+    queryElement.classList?.remove('opacity_off');
+    queryElement.classList?.add('opacity_on');
+    queryElement.classList?.add('animate__fadeIn');
   }
 
   setCurrentPosition(position: number): void {
     this.currentPosition = position;
+    this.updateTimelinePosition(this.currentPosition);
     if (this.currentPosition >= this.items.length - 1) {
       const queryElement = document.querySelector('.dsc-carousel');
-      queryElement.classList.add('animate__fadeOut');
-      queryElement.addEventListener('animationend', () => {
-        queryElement.classList.remove('animate__fadeOut');
+      const queryElement2 = document.querySelector('.floating-img');
+      queryElement.classList?.remove('animate__fadeIn');
+      queryElement.classList?.add('animate__fadeOut');
+      queryElement2.classList?.remove('animate__fadeIn');
+      queryElement2.classList?.add('animate__fadeOut');
+      queryElement2.addEventListener('animationend', () => {
+        queryElement.classList?.remove('opacity_on');
+        queryElement.classList?.add('opacity_off');
+        queryElement2.classList?.remove('opacity_on');
+        queryElement2.classList?.add('opacity_off');
         this.clickNext.emit(true);
       });
     } else {
       this.animateWithFade(CAROUSEL_DATA_ITEMS[position].image);
     }
-    this.updateTimelinePosition(this.currentPosition);
   }
 
   updateTimelinePosition(currentPosition: number): void {

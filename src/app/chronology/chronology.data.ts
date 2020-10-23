@@ -1,5 +1,4 @@
-import {ICarouselItem} from '../carousel-timeline/Icarousel-item.metadata';
-
+import { ICarouselItem } from './carouselItem';
 export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     {
         id: 1,
@@ -14,7 +13,7 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
     {
         id: 3,
         image: 'assets/chronology/70s.png',
-         title: '70s'
+        title: '70s'
     },
     {
         id: 4,
@@ -36,7 +35,7 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
         image: 'assets/chronology/10s.png',
         title: '10s'
     },
-     {
+    {
         id: 8,
         image: 'assets/chronology/future.png',
         title: 'Future'
